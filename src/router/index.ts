@@ -10,6 +10,11 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     component: Home,
   },
+  {
+    path: '/components',
+    name: 'Components',
+    component: () => import(/* webpackChunkName: "Search" */'../views/Components.vue'),
+  },
 ];
 
 const router = new VueRouter({
