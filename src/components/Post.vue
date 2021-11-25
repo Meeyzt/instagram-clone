@@ -10,7 +10,7 @@
         </div>
 
         <div>
-          <icon-base :width="32" :height="32" viewBoxSize="24">
+          <icon-base :width="32" :height="32" :viewBoxSize="24" :viewBoySize="24">
             <details-icon/>
         </icon-base>
         </div>

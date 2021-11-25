@@ -2,7 +2,7 @@
   <svg xmlns="http://www.w3.org/2000/svg"
     :width="width"
     :height="height"
-    :viewBox="`0 0 ${viewBoxSize} ${viewBoxSize}`"
+    :viewBox="`0 0 ${viewBoxSize} ${viewBoySize}`"
     fill="currentColor"
   >
     <slot/>
@@ -23,6 +23,11 @@ export default {
     },
 
     viewBoxSize: {
+      type: Number,
+      default: 48,
+    },
+
+    viewBoySize: {
       type: Number,
       default: 48,
     },
