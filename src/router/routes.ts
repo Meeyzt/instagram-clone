@@ -130,6 +130,11 @@ const routes: Array<RouteConfig> = [
         ],
       },
       {
+        path: 'login',
+        name: 'Login',
+        component: () => import(/* webpackChunkName: "Login" */'../views/Accounts/Login.vue'),
+      },
+      {
         path: 'manage-access',
         name: 'ManageAccess',
         component: () => import(/* webpackChunkName: "ManageAccess" */'../views/Accounts/ManageAccess.vue'),
