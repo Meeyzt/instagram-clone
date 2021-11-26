@@ -1,5 +1,5 @@
 <template>
-  <button> {{text}} </button>
+  <button :class="`${backgroundColor} text-${textColor}`"> {{text}} </button>
 </template>
 
 <script lang="ts">
@@ -8,6 +8,16 @@
   export default Vue.extend({
     props: {
       text: {
+        type: String,
+        required: true,
+      },
+
+      backgroundColor: {
+        type: String,
+        required: true,
+      },
+
+      textColor: {
         type: String,
         required: true,
       },
@@ -20,13 +30,23 @@
     border-radius: 6px;
     border:0;
     cursor: pointer;
-    background-color: rgb(34, 151, 206);
-    color: white;
     padding: 8px;
   }
 
-  button:hover {
-    transform:scale(1.1, 1.1);
-    transition:all 1sn;
+  .text-black {
+    color:black;
+  }
+
+  .text-white {
+    color:white;
+  }
+
+  .white {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.2);
+  }
+
+  .blue {
+    background-color: rgb(34, 151, 206);
   }
 </style>

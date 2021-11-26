@@ -14,7 +14,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import SearchBar from './SearchInput.vue';
+import SearchBar from './Input.vue';
 import Logo from './Logo.vue';
 import Navbar from './Navbar.vue';
 

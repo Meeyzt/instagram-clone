@@ -2,18 +2,16 @@
   <div class="gridPost">
     <div class="photo">
       <img src="https://picsum.photos/300/300" alt="wqd" />
-      <div class="front">
-        <div>
-          <icon-base :width="24" :height="24">
+      <div class="hover">
+        <div class="hover-item-center">
+          <icon-base :width="19" :height="19">
             <like-icon :filled="true"/>
           </icon-base>
           52
         </div>
 
-        <div>
-          <icon-base :width="24" :height="24">
-            <comment-icon :filled="true"/>
-          </icon-base>
+        <div class="hover-item-center">
+          <div class="commenticon"/>
           69
         </div>
       </div>
@@ -26,13 +24,11 @@ import Vue from 'vue';
 
 import IconBase from '@/components/IconBase.vue';
 import LikeIcon from '@/components/icons/LikeIcon.vue';
-import CommentIcon from '@/components/icons/CommentIcon.vue';
 
 export default Vue.extend({
   components: {
     IconBase,
     LikeIcon,
-    CommentIcon,
   },
 });
 </script>
@@ -50,12 +46,12 @@ export default Vue.extend({
       cursor: pointer;
 
       &:hover {
-        .front {
+        .hover {
           display: flex;
         }
       }
 
-      .front {
+      .hover {
         display: none;
         align-items: center;
         justify-content: center;
@@ -66,6 +62,22 @@ export default Vue.extend({
         background: rgba(128, 128, 128, 0.5);
         top:0;
         left:0;
+
+        .hover-item-center {
+          display: flex;
+          align-items: center;
+          gap:5px;
+          font-size: 14px;
+        }
+
+        .commenticon {
+          background-image: url('https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png');
+          background-repeat: no-repeat;
+          background-size: 415px 365px;
+          background-position: -360px -233px;
+          height: 19px;
+          width: 19px;
+        }
       }
     }
   }

@@ -1,12 +1,14 @@
 <template>
   <div class="components">
 
+  <!-- Input -->
     <div class="component">
-      <h1>SearchInput</h1>
+      <h1>Input</h1>
 
-      <SearchInput />
+      <Input placeholder="ANAN"/>
     </div>
 
+  <!-- Icon -->
     <div class="component">
       <h1>Icon</h1>
 
@@ -116,7 +118,7 @@
           <play-icon/>
         </icon-base>
 
-        <icon-base :width="32" :height="32">
+        <icon-base :width="32" :height="32" :viewBoxSize="32" :viewBoySize="32">
           <profile-icon/>
         </icon-base>
 
@@ -133,27 +135,50 @@
         </icon-base>
 
         <icon-base :width="32" :height="32" :viewBoxSize="24" :viewBoySize="24">
-            <details-icon/>
+          <details-icon/>
+        </icon-base>
+
+        <icon-base :width="32" :height="32">
+          <grid-icon/>
+        </icon-base>
+
+        <icon-base :width="32" :height="32">
+          <reel-icon/>
+        </icon-base>
+
+        <icon-base :width="32" :height="32" :viewBoxSize="24" :viewBoySize="24">
+          <videos-icon/>
+        </icon-base>
+
+        <icon-base :width="32" :height="32">
+          <tag-icon/>
         </icon-base>
 
       </div>
     </div>
 
+  <!-- Button -->
     <div class="component">
       <h1>Button</h1>
 
-      <Button text="Ben minnak bir butonum" />
+      <div class="flex-row gap">
+        <Button backgroundColor="blue" textColor="white" text="Ben minnak bir butonum" />
+        <Button backgroundColor="white" textColor="black" text="Ben daha minnağım" disabled />
+      </div>
     </div>
 
+  <!-- USER PİCTURE -->
     <div class="component">
       <h1>UserPicture</h1>
 
       <div class="flex-row gap">
-        <user-picture class="userPicture-small" />
-        <user-picture class="userPicture-small" :story="true" />
+        <user-picture size="90" />
+        <user-picture size="120" :story="true" />
+        <user-picture size="120" />
       </div>
     </div>
 
+  <!-- Post -->
     <div class="component">
       <h1>Post</h1>
 
@@ -162,6 +187,7 @@
       </div>
     </div>
 
+  <!-- Grid Post -->
     <div class="component">
       <h1>GridPost</h1>
 
@@ -176,7 +202,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import SearchInput from '@/components/SearchInput.vue';
+import Input from '@/components/Input.vue';
 import UserPicture from '@/components/UserPicture.vue';
 import IconBase from '@/components/IconBase.vue';
 import Post from '@/components/Post.vue';
@@ -208,10 +234,14 @@ import SettingsIcon from '@/components/icons/SettingsIcon.vue';
 import SliderPhotoIcon from '@/components/icons/SliderPhotoIcon.vue';
 import SwitchIcon from '@/components/icons/SwitchIcon.vue';
 import DetailsIcon from '@/components/icons/DetailsIcon.vue';
+import GridIcon from '@/components/icons/GridIcon.vue';
+import TagIcon from '@/components/icons/TagIcon.vue';
+import VideosIcon from '@/components/icons/VideosIcon.vue';
+import ReelIcon from '@/components/icons/ReelIcon.vue';
 
 export default Vue.extend({
   components: {
-    SearchInput,
+    Input,
     Button,
     MessengerIcon,
     AddPostIcon,
@@ -242,6 +272,10 @@ export default Vue.extend({
     SliderPhotoIcon,
     SwitchIcon,
     DetailsIcon,
+    GridIcon,
+    TagIcon,
+    VideosIcon,
+    ReelIcon,
   },
 });
 </script>

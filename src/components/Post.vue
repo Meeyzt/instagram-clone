@@ -17,7 +17,7 @@
     </div>
 
     <div class="post-image">
-      <img src="https://picsum.photos/1000/1740" alt="asd">
+      <img src="https://picsum.photos/450/300" alt="asd">
     </div>
 
     <div class="post-description">
@@ -145,7 +145,6 @@ export default Vue.extend({
   .post-image {
     box-sizing: border-box;
     width: 100%;
-    height: 750px;
 
     img{
       width: 100%;

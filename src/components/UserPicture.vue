@@ -1,5 +1,5 @@
 <template>
-  <div :class="story ? 'story-circle' : 'normal'">
+  <div :style="{ width: size+'px', height: size+'px'}" :class="story ? 'story-circle' : 'normal'">
     <img src="https://picsum.photos/150/150" alt="sad">
   </div>
 </template>
@@ -12,6 +12,11 @@ export default Vue.extend({
     story: {
       type: Boolean,
       default: false,
+    },
+
+    size: {
+      type: Number,
+      required: true,
     },
   },
 });
