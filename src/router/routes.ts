@@ -8,50 +8,6 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: '/:id',
-    name: 'User',
-    component: () => import(/* webpackChunkName: "User" */'../views/User/Index.vue'),
-    children: [
-      {
-        path: 'followers',
-        name: 'Followers',
-        component: () => import(/* webpackChunkName: "Followers" */'../views/User/Followers.vue'),
-        children: [
-          {
-            path: 'mutualOnly',
-            name: 'MutualOnly',
-            component: () => import(/* webpackChunkName: "MutualOnly" */'../views/User/MutualOnly.vue'),
-          },
-        ],
-      },
-      {
-        path: 'following',
-        name: 'Following',
-        component: () => import(/* webpackChunkName: "Following" */'../views/User/Following.vue'),
-      },
-      {
-        path: 'reels',
-        name: 'Reels',
-        component: () => import(/* webpackChunkName: "Reels" */'../views/User/Reels.vue'),
-      },
-      {
-        path: 'channel',
-        name: 'Channel',
-        component: () => import(/* webpackChunkName: "Channel" */'../views/User/Channel.vue'),
-      },
-      {
-        path: 'tagged',
-        name: 'Tagged',
-        component: () => import(/* webpackChunkName: "tagged" */'../views/User/Tagged.vue'),
-      },
-      {
-        path: 'saved',
-        name: 'Saved',
-        component: () => import(/* webpackChunkName: "Saved" */'../views/User/Saved.vue'),
-      },
-    ],
-  },
-  {
     path: '/direct',
     name: 'Direct',
     component: () => import(/* webpackChunkName: "Direct" */'../views/Direct/Index.vue'),
@@ -170,6 +126,50 @@ const routes: Array<RouteConfig> = [
     path: '/components',
     name: 'Components',
     component: () => import(/* webpackChunkName: "Search" */'../views/Components.vue'),
+  },
+  {
+    path: '/:id',
+    name: 'User',
+    component: () => import(/* webpackChunkName: "User" */'../views/User/Index.vue'),
+    children: [
+      {
+        path: 'followers',
+        name: 'Followers',
+        component: () => import(/* webpackChunkName: "Followers" */'../views/User/Followers.vue'),
+        children: [
+          {
+            path: 'mutualOnly',
+            name: 'MutualOnly',
+            component: () => import(/* webpackChunkName: "MutualOnly" */'../views/User/MutualOnly.vue'),
+          },
+        ],
+      },
+      {
+        path: 'following',
+        name: 'Following',
+        component: () => import(/* webpackChunkName: "Following" */'../views/User/Following.vue'),
+      },
+      {
+        path: 'reels',
+        name: 'Reels',
+        component: () => import(/* webpackChunkName: "Reels" */'../views/User/Reels.vue'),
+      },
+      {
+        path: 'channel',
+        name: 'Channel',
+        component: () => import(/* webpackChunkName: "Channel" */'../views/User/Channel.vue'),
+      },
+      {
+        path: 'tagged',
+        name: 'Tagged',
+        component: () => import(/* webpackChunkName: "tagged" */'../views/User/Tagged.vue'),
+      },
+      {
+        path: 'saved',
+        name: 'Saved',
+        component: () => import(/* webpackChunkName: "Saved" */'../views/User/Saved.vue'),
+      },
+    ],
   },
 ];
 
