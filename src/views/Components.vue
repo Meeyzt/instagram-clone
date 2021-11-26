@@ -5,7 +5,11 @@
     <div class="component">
       <h1>Input</h1>
 
-      <Input placeholder="ANAN"/>
+      <div style="max-width:300px">
+        <Input placeholder="ANAdwqdlwqnkdlnwqlkdnklwqndlknwqkldknwqklnN" :height="30"/>
+        <br>
+        <Input placeholder="dlkwqmkldmqwkldklqwmdqwklmdklwqmldmwqkldmlk" :width="400" :height="60" :font="34"/>
+      </div>
     </div>
 
   <!-- Icon -->
