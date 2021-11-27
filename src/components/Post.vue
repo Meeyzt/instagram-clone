@@ -6,7 +6,7 @@
           <user-picture />
         </div>
 
-        <div>thefunmarvel</div>
+        <span>thefunmarvel</span>
         </div>
 
         <div>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="post-description-text">
-        12.345 beğenme
+        <span>12.345 beğenme</span>
       </div>
 
       <div class="post-description-subText">
@@ -62,7 +62,7 @@
       </div>
 
       <div class="post-description-comments">
-        999 yorumun tümünü gör
+        <span>999 yorumun tümünü gör</span>
       </div>
     </div>
 
@@ -133,12 +133,23 @@ export default Vue.extend({
       flex-direction: row;
       align-items: center;
       gap: 10px;
-    }
 
-    .post-profile-image {
-      width: 32px;
-      height: 32px;
-      box-sizing: border-box;
+      .post-profile-image {
+        width: 32px;
+        height: 32px;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+
+      span {
+        cursor:pointer;
+        font-weight: 600;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -184,12 +195,14 @@ export default Vue.extend({
     }
 
     .post-description-text {
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.9);
-      cursor: pointer;
+      span {
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.9);
+        cursor: pointer;
 
-      &:hover {
-        text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -208,9 +221,12 @@ export default Vue.extend({
     }
 
     .post-description-comments {
-      color: rgba(0, 0, 0, 0.6);
-      padding-top: 8px;
-      cursor: pointer;
+
+      span {
+        color: rgba(0, 0, 0, 0.6);
+        padding-top: 8px;
+        cursor: pointer;
+      }
     }
   }
 
@@ -229,6 +245,10 @@ export default Vue.extend({
       gap:16px;
       width: 100%;
       font-size: 14px;
+
+      svg {
+        cursor: pointer;
+      }
 
       input {
         width: 100%;
