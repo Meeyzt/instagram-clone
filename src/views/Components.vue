@@ -200,6 +200,13 @@
       </div>
     </div>
 
+  <!-- Wide Post -->
+    <div class="component">
+      <h1>WidePost</h1>
+
+      <wide-post/>
+    </div>
+
   </div>
 </template>
 
@@ -212,6 +219,7 @@ import IconBase from '@/components/IconBase.vue';
 import Post from '@/components/Post.vue';
 import Button from '@/components/Button.vue';
 import GridPost from '@/components/GridPost.vue';
+import WidePost from '@/components/WidePost.vue';
 
 import HomeIcon from '@/components/icons/HomeIcon.vue';
 import MessengerIcon from '@/components/icons/MessengerIcon.vue';
@@ -252,6 +260,7 @@ export default Vue.extend({
     ExploreIcon,
     LikeIcon,
     Post,
+    WidePost,
     UserPicture,
     IconBase,
     CommentIcon,
@@ -312,7 +321,7 @@ export default Vue.extend({
     }
 
     .post {
-      width: 600px;
+      max-width: 600px;
     }
 
     .flex-row {

@@ -31,6 +31,9 @@
     border:0;
     cursor: pointer;
     padding: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
   }
 
   .text-black {
