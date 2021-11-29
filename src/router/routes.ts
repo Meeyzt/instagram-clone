@@ -63,6 +63,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/accounts',
     name: 'Accounts',
+    component: () => import(/* webpackChunkName: "Edit" */'../views/Accounts/Index.vue'),
     children: [
       {
         path: 'edit',
