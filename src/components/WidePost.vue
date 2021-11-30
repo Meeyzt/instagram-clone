@@ -9,7 +9,7 @@
       <div class="header">
 
         <div class="left">
-          <user-picture :size="32"/>
+          <user-picture src="https://picsum.photos/150/150" :size="32"/>
 
           <div class="title">thefunmarvel</div>
 
@@ -32,7 +32,7 @@
 
           <div class="base">
             <div class="picture">
-              <user-picture :size="32"/>
+              <user-picture src="https://picsum.photos/150/150" :size="32"/>
             </div>
 
             <div class="title">
@@ -90,7 +90,7 @@
           </div>
 
           <div class="like">
-            <user-picture size="20"/>
+            <user-picture src="https://picsum.photos/150/150" size="20"/>
             <span>Ayça ve 42.950 diğer kişi</span> beğendi
           </div>
 

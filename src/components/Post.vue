@@ -3,7 +3,7 @@
     <div class="post-titlebar">
       <div class="post-title">
         <div class="post-profile-image">
-          <user-picture />
+          <user-picture src="https://picsum.photos/150/150" />
         </div>
 
         <span>thefunmarvel</span>
