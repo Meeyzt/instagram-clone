@@ -1,5 +1,7 @@
 <template>
-  <button :class="`${backgroundColor} text-${textColor}`"> {{text}} </button>
+  <button :class="`${backgroundColor} text-${textColor}`">
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
@@ -51,6 +53,10 @@
 
   .text-blue {
     color: rgb(34, 151, 206);
+  }
+
+  .text-darkblue {
+    color: #385185;
   }
 
   .white {

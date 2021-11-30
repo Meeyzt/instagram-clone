@@ -1,6 +1,6 @@
 <template>
   <div :style="{height: (height-2)+'px', borderRadius: height/100}" class="search-bar text-gray">
-    <input :style="{fontSize: font+'px'}" type="text" placeholder="asdasdasdasdsadsadas" />
+    <input :type="type" :style="{fontSize: font+'px'}" :placeholder="placeholder" />
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default Vue.extend({
       type: Number,
       default: 14,
     },
+
+    type: {
+      type: String,
+      default: 'text',
+    },
   },
 });
 </script>
@@ -43,10 +48,10 @@ export default Vue.extend({
       background: transparent;
       border: 0px;
       outline: none;
-
-      ::placeholder {
-        text-overflow: ellipsis;
-      }
+      padding: 9px 0 7px 8px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
   }
 </style>
