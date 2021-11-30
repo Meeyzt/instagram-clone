@@ -86,7 +86,7 @@ export default Vue.extend({
 .footer {
   display: flex;
   padding: 0 16px;
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   box-sizing: border-box;
 }
@@ -117,7 +117,7 @@ export default Vue.extend({
   margin-bottom: 12px;
   margin-left: 8px;
   margin-right: 8px;
-  color: rgba(142, 142, 142,1);
+  color: rgb(142, 142, 142);
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;

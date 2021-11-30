@@ -166,8 +166,9 @@
       <h1>Button</h1>
 
       <div class="flex-row gap">
-        <Button backgroundColor="blue" textColor="white" text="Ben minnak bir butonum" />
+        <Button backgroundColor="blue" textColor="white" text="Ben minnak bir butonum" disabled />
         <Button backgroundColor="white" textColor="black" text="Ben daha minnağım" disabled />
+        <Button backgroundColor="transparent" textColor="blue" text="en minnak benim"/>
       </div>
     </div>
 
@@ -207,6 +208,27 @@
       <wide-post/>
     </div>
 
+    <div class="component">
+      <h1>LoginLayout</h1>
+
+      <login-layout>
+        <post/>
+      </login-layout>
+    </div>
+
+    <div class="component">
+      <h1>HomeLayout</h1>
+
+      <home-layout>
+        <post/>
+      </home-layout>
+    </div>
+
+    <div class="component">
+      <h1>Footer</h1>
+
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -220,6 +242,10 @@ import Post from '@/components/Post.vue';
 import Button from '@/components/Button.vue';
 import GridPost from '@/components/GridPost.vue';
 import WidePost from '@/components/WidePost.vue';
+import Footer from '@/components/Footer.vue';
+
+import LoginLayout from '@/layouts/AuthLayout.vue';
+import HomeLayout from '@/layouts/HomeLayout.vue';
 
 import HomeIcon from '@/components/icons/HomeIcon.vue';
 import MessengerIcon from '@/components/icons/MessengerIcon.vue';
@@ -289,6 +315,9 @@ export default Vue.extend({
     TagIcon,
     VideosIcon,
     ReelIcon,
+    LoginLayout,
+    Footer,
+    HomeLayout,
   },
 });
 </script>
