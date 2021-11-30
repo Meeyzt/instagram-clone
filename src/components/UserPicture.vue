@@ -9,9 +9,9 @@ import Vue from 'vue';
 
 export default Vue.extend({
   props: {
-    story: {
-      type: Boolean,
-      default: false,
+    type: {
+      type: String,
+      default: 'normal',
     },
 
     size: {
@@ -19,29 +19,51 @@ export default Vue.extend({
       required: true,
     },
   },
+
+  computed: {
+    frameStatus() {
+      if (this.type === 'story') {
+        return 'story-circle';
+      }
+      if (this.type === 'watched-story') {
+        return 'watched-story-circle';
+      }
+        return 'normal';
+    },
+  },
 });
 </script>
 
 <style lang="scss" scoped>
   .story-circle {
-      display: flex;
-      align-items: center;
-      border-radius: 9999px;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, red, orange, purple);
+    display: flex;
+    align-items: center;
+    border-radius: 9999px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, red, orange, purple);
 
-      img {
-        width: 90%;
-        height: 90%;
-        border-radius: 9999px;
-      }
+    img {
+      width: 90%;
+      height: 90%;
+      border-radius: 9999px;
+    }
     }
 
     .normal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-radius: 999999px;
+
+      img {
+        border: 2px solid white;
+        border-radius: 999999px;
+      }
 
       img {
         border-radius: 9999px;
