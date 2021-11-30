@@ -73,16 +73,17 @@ const routes: Array<RouteConfig> = [
       {
         path: 'password',
         name: 'Password',
+        component: () => import(/* webpackChunkName: "Edit" */'../views/Accounts/Password/Index.vue'),
         children: [
           {
             path: 'change',
             name: 'PasswordChange',
-            component: () => import(/* webpackChunkName: "PasswordChange" */'../views/Accounts/PasswordChange.vue'),
+            component: () => import(/* webpackChunkName: "PasswordChange" */'../views/Accounts/Password/PasswordChange.vue'),
           },
           {
             path: 'reset',
             name: 'PasswordReset',
-            component: () => import(/* webpackChunkName: "PasswordReset" */'../views/Accounts/PasswordReset.vue'),
+            component: () => import(/* webpackChunkName: "PasswordReset" */'../views/Accounts/Password/PasswordReset.vue'),
           },
         ],
       },

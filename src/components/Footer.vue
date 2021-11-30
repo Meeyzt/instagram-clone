@@ -2,14 +2,20 @@
   <div class="footer">
     <div class="footer-content">
       <div class="footer-content-links">
-        <div class="footer-content-links-group">
+        <div v-if="!isHome" class="footer-content-links-group">
           <div v-for="link in links" :key="link.id" class="footer-content-link">
             {{ link.text }}
           </div>
         </div>
+        <div v-if="isHome" class="footer-content-links-group-for-home">
+          <div v-for="link in links" :key="link.id" class="footer-content-link-for-home">
+            {{ link.text }}
+            <div v-if="link.point" class="point">·</div>
+          </div>
+        </div>
       </div>
       <div class="footer-content-language-and-brand">
-        <div class="language-area">
+        <div v-if="!isHome" class="language-area">
           Türkçe
           <div class="language-arrow">
             <icon-base class="arrow-icon">
@@ -37,44 +43,51 @@ export default Vue.extend({
     IconBase,
   },
 
+  props: {
+    isHome: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
   data() {
     return {
       links: [
         {
-          id: 1, text: 'Meta', link: '',
+          id: 1, text: 'Meta', link: '', point: true,
         },
         {
-          id: 2, text: 'Hakkında', link: '',
+          id: 2, text: 'Hakkında', link: '', point: true,
         },
         {
-          id: 3, text: 'Blog', link: '',
+          id: 3, text: 'Blog', link: '', point: true,
         },
         {
-          id: 4, text: 'İş Fırsatları', link: '',
+          id: 4, text: 'İş Fırsatları', link: '', point: true,
         },
         {
-          id: 5, text: 'Yardım', link: '',
+          id: 5, text: 'Yardım', link: '', point: true,
         },
         {
-          id: 5, text: 'API', link: '',
+          id: 5, text: 'API', link: '', point: true,
         },
         {
-          id: 5, text: 'Gizlilik', link: '',
+          id: 5, text: 'Gizlilik', link: '', point: true,
         },
         {
-          id: 5, text: 'Koşullar', link: '',
+          id: 5, text: 'Koşullar', link: '', point: true,
         },
         {
-          id: 5, text: 'Başlıca Hesaplar', link: '',
+          id: 5, text: 'Başlıca Hesaplar', link: '', point: true,
         },
         {
-          id: 5, text: 'Konu Etiketleri', link: '',
+          id: 5, text: 'Konu Etiketleri', link: '', point: true,
         },
         {
-          id: 5, text: 'Konumlar', link: '',
+          id: 5, text: 'Konumlar', link: '', point: true,
         },
         {
-          id: 5, text: 'Instagram Lite', link: '',
+          id: 5, text: 'Instagram Lite', link: '', point: false,
         },
       ],
     };
@@ -123,6 +136,32 @@ export default Vue.extend({
   line-height: 16px;
   box-sizing: border-box;
   cursor: pointer;
+}
+
+.footer-content-links-group-for-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.footer-content-link-for-home {
+  display: flex;
+  margin-bottom: 12px;
+  color: rgb(142, 142, 142);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.point {
+  display: flex;
+  margin: 0 3px;
+  padding-top: 1px;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-content-language-and-brand {
