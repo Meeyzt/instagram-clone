@@ -34,22 +34,41 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow:hidden;
+    width:100%;
   }
 
   .text-black {
     color:black;
   }
 
+  .transparent {
+    background: transparent;
+  }
+
   .text-white {
     color:white;
+  }
+
+  .text-blue {
+    color: rgb(34, 151, 206);
   }
 
   .white {
     background-color: white;
     border: 1px solid rgba(0,0,0,0.2);
+    opacity: 1;
+
+    &:disabled {
+      opacity: .3;
+    }
   }
 
   .blue {
     background-color: rgb(34, 151, 206);
+    opacity: 1;
+
+    &:disabled {
+      opacity: .3;
+    }
   }
 </style>
