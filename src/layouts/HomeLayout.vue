@@ -25,7 +25,7 @@
         </div>
         <Button backgroundColor="transparent" textColor="blue" text="takip et"/>
       </div>
-      <Footer class="footer"/>
+      <Footer class="footer" :isHome="true"/>
     </div>
   </div>
 </div>

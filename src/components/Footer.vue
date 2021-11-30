@@ -14,8 +14,8 @@
           </div>
         </div>
       </div>
-      <div class="footer-content-language-and-brand">
-        <div v-if="!isHome" class="language-area">
+      <div v-if="!isHome" class="footer-content-language-and-brand">
+        <div class="language-area">
           Türkçe
           <div class="language-arrow">
             <icon-base class="arrow-icon">
@@ -24,6 +24,11 @@
           </div>
         </div>
         <span class="brand-area">
+          © 2021 Instagram from Meta
+        </span>
+      </div>
+      <div v-if="isHome" class="footer-content-language-and-brand-for-home">
+        <span class="brand-area-for-home">
           © 2021 Instagram from Meta
         </span>
       </div>
@@ -147,18 +152,18 @@ export default Vue.extend({
 
 .footer-content-link-for-home {
   display: flex;
-  margin-bottom: 12px;
-  color: rgb(142, 142, 142);
+  margin-bottom: 5px;
+  color: rgb(199, 199, 199);
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 11px;
+  line-height: 13px;
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .point {
   display: flex;
-  margin: 0 3px;
+  margin: 0 2px;
   padding-top: 1px;
   align-items: center;
   justify-content: center;
@@ -167,8 +172,15 @@ export default Vue.extend({
 .footer-content-language-and-brand {
   display: flex;
   margin: 12px 0;
-  justify-content: center;
   width: 100%;
+  justify-content: center;
+}
+
+.footer-content-language-and-brand-for-home {
+  display: flex;
+  margin: 12px 0;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .language-area {
@@ -199,6 +211,18 @@ export default Vue.extend({
   line-height: 16px;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.brand-area-for-home {
+  display: flex;
+  cursor: pointer;
+  color: rgba(199, 199, 199, 1);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .arrow-icon {
