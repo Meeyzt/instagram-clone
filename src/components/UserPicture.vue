@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ width: size+'px', height: size+'px'}" :class="story ? 'story-circle' : 'normal'">
+  <div :style="{ width: size+'px', height: size+'px'}" :class="frameStatus">
     <img src="https://picsum.photos/150/150" alt="sad">
   </div>
 </template>
@@ -22,7 +22,7 @@ export default Vue.extend({
 
   computed: {
     frameStatus() {
-      if (this.type === 'story') {
+      if (this.type === 'story-circle') {
         return 'story-circle';
       }
       if (this.type === 'watched-story') {

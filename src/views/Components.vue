@@ -8,7 +8,7 @@
       <div style="max-width:300px">
         <Input placeholder="ANAdwqdlwqnkdlnwqlkdnklwqndlknwqkldknwqklnN" :height="30"/>
         <br>
-        <Input placeholder="dlkwqmkldmqwkldklqwmdqwklmdklwqmldmwqkldmlk" :width="400" :height="60" :font="34"/>
+        <Input type="password" placeholder="dlkwqmkldmqwkldklqwmdqwklmdklwqmldmwqkldmlk" :width="400" :height="60" :font="34"/>
       </div>
     </div>
 
@@ -166,9 +166,9 @@
       <h1>Button</h1>
 
       <div class="flex-row gap">
-        <Button backgroundColor="blue" textColor="white" text="Ben minnak bir butonum" disabled />
-        <Button backgroundColor="white" textColor="black" text="Ben daha minnağım" disabled />
-        <Button backgroundColor="transparent" textColor="blue" text="en minnak benim"/>
+        <Button backgroundColor="blue" textColor="white" > Ben minnak bir butonum </Button>
+        <Button backgroundColor="white" textColor="black" disabled> Ben daha minnağım </Button>
+        <Button backgroundColor="transparent" textColor="blue" > en minnak benim </Button>
       </div>
     </div>
 
@@ -178,8 +178,8 @@
 
       <div class="flex-row gap">
         <user-picture size="90" />
-        <user-picture size="120" :story="true" />
-        <user-picture size="120" />
+        <user-picture size="120" type="story-circle" />
+        <user-picture size="120" type="watched-story-circle" />
       </div>
     </div>
 
