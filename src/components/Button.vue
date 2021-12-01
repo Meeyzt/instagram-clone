@@ -9,11 +9,6 @@
 
   export default Vue.extend({
     props: {
-      text: {
-        type: String,
-        required: true,
-      },
-
       backgroundColor: {
         type: String,
         required: true,
@@ -28,6 +23,7 @@
 </script>
 
 <style lang="scss" scoped>
+
   button {
     border-radius: 6px;
     border:0;
@@ -37,6 +33,7 @@
     text-overflow: ellipsis;
     overflow:hidden;
     width:100%;
+    height: 100%;
   }
 
   .text-black {

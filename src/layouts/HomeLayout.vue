@@ -27,7 +27,7 @@
           <user-picture :src="user.pic" size="32"/>
           <div class="title">
             <div class="username">{{user.username}}</div>
-            <div class="name">Senin İçin Öneriliyor</div>
+            <div class="name">{{user.detail}}</div>
           </div>
         </div>
         <div>
@@ -63,26 +63,31 @@ export default Vue.extend({
         username: '_meeyzt',
         pic: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png',
         request: true,
+        detail: 'Senin İçin Öneriliyor',
       },
       {
         username: 'osmnbrk',
         pic: 'https://i.pinimg.com/236x/4a/11/91/4a1191144a10a1e6beccfa44842584ca.jpg',
         request: false,
+        detail: 'tahirakbas takip ediyor',
       },
       {
         username: 'tayfun',
         pic: 'https://i.ytimg.com/vi/l8dvHzmBHgI/hqdefault.jpg',
         request: false,
+        detail: 'Instagram\'da Yeni',
       },
       {
         username: 'mehmethakkioglu',
         pic: 'https://i.pinimg.com/736x/c5/f9/a1/c5f9a1d44c2521abb99a47dba627e8a0.jpg',
         request: false,
+        detail: 'Senin İçin Öneriliyor',
       },
       {
-        username: 'Berat',
-        pic: 'https://haber.sol.org.tr/sites/default/files/styles/content_image_size_type4/public/images/content/article/2021/06/18/berat.jpeg?itok=os7Vf-oN',
+        username: 'sexijojukberat',
+        pic: 'https://fastly.4sqi.net/img/user/130x130/457421368_1VYEbuOp_qB-RQdgGX8_keysrA3014GQ5-VTNCDCu7Ks-KLOMuGjUR-Gv8Chj1ME2TekLK5Z1.jpg',
         request: false,
+        detail: 'Senin İçin Öneriliyor',
       }],
     };
   },
@@ -91,16 +96,18 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .home-layout {
+    height: 100%;
 
     .main {
       display: flex;
-      padding: 32px 72px;
+      padding: 32px 32px 0 72px;
       gap:20px;
       background: #fafafa;
       overflow: hidden;
+      height: 95%;
 
       .content {
-        width: 100%;
+        width: 80%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -167,7 +174,7 @@ export default Vue.extend({
           width: 100%;
           display: flex;
           justify-content: space-between;
-          padding: 4px 0;
+          padding: 6px 0;
           font-size: 14px;
 
           .user {
@@ -175,10 +182,11 @@ export default Vue.extend({
           }
 
           .title {
-            padding-left: 5px;
+            padding-left: 10px;
             display: flex;
             justify-content: center;
             flex-direction: column;
+            gap: 5px;
 
             .username {
               font-weight: 600;
