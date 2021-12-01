@@ -1,7 +1,28 @@
 <template>
-  <div :style="{height: (height-2)+'px', borderRadius: height/100}" class="search-bar text-gray">
-    <input :type="type" :style="{fontSize: font+'px'}" :placeholder="placeholder" />
-  </div>
+  <label
+  class="search-bar"
+  :class="{
+    'halfopacity' : isDisabled,
+  }">
+    <label
+      :class="{
+        'text-sm': !isFilled,
+        'text-xs -translate-y-2': isFilled,
+      }"
+      class="placeholder"
+      v-if="placeholder"
+    >{{ placeholder }}</label>
+    <input
+      :class="{
+        'topten': isFilled
+      }"
+      :type="type"
+      :value="value"
+      :disabled="isDisabled"
+      @input="$emit('input', $event.target.value)"
+      @keyup.enter="$event.srcElement.blur(), $emit('keyup-enter')"
+    />
+  </label>
 </template>
 
 <script lang="ts">
@@ -9,24 +30,30 @@ import Vue from 'vue';
 
 export default Vue.extend({
   props: {
-    placeholder: {
+    value: {
       type: String,
-      required: true,
-    },
-
-    height: {
-      type: Number,
-      default: 32,
-    },
-
-    font: {
-      type: Number,
-      default: 14,
+      default: () => null,
+      // validator: prop => typeof prop === 'string' || prop === null,
     },
 
     type: {
       type: String,
-      default: 'text',
+      default: () => 'text',
+    },
+
+    placeholder: {
+      type: String,
+      default: () => null,
+    },
+
+    isFilled: {
+      type: Boolean,
+      default: () => false,
+    },
+
+    isDisabled: {
+      type: Boolean,
+      default: () => false,
     },
   },
 });
@@ -35,23 +62,56 @@ export default Vue.extend({
 <style lang="scss" scoped>
 
   .search-bar {
+    width: 100%;
+    height: 40px;
+    display: flex;
     position: relative;
     background-color: #fafafa;
-    border-radius:1vh;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgba(229, 231, 235, 1);
+    align-items: center;
+
+    .text-sm {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .text-xs {
+      font-size: 10px;
+      line-height: 14px;
+      transform: translateY(-12px);
+    }
+
+    .placeholder {
+      position: absolute;
+      right: 0;
+      left: -5px;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding-left: 12px;
+      color: rgba(107, 114, 128,1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      user-select: none;
+      pointer-events: none;
+      transition: all 1s ease-in-out;
+      transform-origin: top;
+      transition-duration: 400ms;
+    }
 
     input {
       width: 100%;
-      height: 100%;
-      box-sizing: border-box;
+      height: 40px;
       background: transparent;
-      border: 0px;
+      padding: 12px 8px;
       outline: none;
-      padding: 9px 0 7px 8px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
+      border: 0;
+    }
+
+    .topten {
+      padding-top: -40px;
     }
   }
 </style>

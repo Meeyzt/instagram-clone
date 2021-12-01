@@ -7,10 +7,10 @@
           </div>
           <div class="form">
             <div class="username-input">
-              <Input placeholder="Telefon numarası, kullanıcı adı veya e-posta" :height="30"/>
+              <Input type="text" placeholder="amcan" v-model="username" :isFilled="username !== ''" />
             </div>
             <div class="password-input">
-              <Input type="password" placeholder="Şifre" :height="30"/>
+              <Input type="password" placeholder="baban" v-model="password" :isFilled="password !== ''" />
             </div>
             <div class="login-button">
               <Button backgroundColor="blue" textColor="white">Giriş Yap</Button>
@@ -35,7 +35,7 @@
       </div>
       <div class="box-area">
         <div class="register-text">
-          <span>Hesabın yok mu? &nbsp;</span>
+          <span>Hesabın yok mu? &nbsp; {{username}}</span>
           <router-link :to="'/accounts/emailsignup'" class="register-link" href="">Kaydol</router-link>
         </div>
       </div>
@@ -66,6 +66,13 @@ export default Vue.extend({
   components: {
     Button,
     Input,
+  },
+
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
   },
 });
 </script>

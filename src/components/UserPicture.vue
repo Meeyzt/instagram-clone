@@ -1,6 +1,6 @@
 <template>
   <div :style="{ width: size+'px', height: size+'px'}" :class="frameStatus">
-    <img src="https://picsum.photos/150/150" alt="sad">
+    <img :src="src" alt="sad">
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'normal',
+    },
+
+    src: {
+      type: String,
+      required: true,
     },
 
     size: {
@@ -51,7 +56,7 @@ export default Vue.extend({
     }
     }
 
-    .normal {
+    .watched-story-circle {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,8 +67,19 @@ export default Vue.extend({
 
       img {
         border: 2px solid white;
-        border-radius: 999999px;
+        border-radius: 9999px;
+        width: 100%;
+        height: 100%;
       }
+    }
+
+    .normal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 999999px;
 
       img {
         border-radius: 9999px;

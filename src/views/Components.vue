@@ -172,14 +172,14 @@
       </div>
     </div>
 
-  <!-- USER PİCTURE -->
+  <!-- USER PICTURE -->
     <div class="component">
       <h1>UserPicture</h1>
 
       <div class="flex-row gap">
-        <user-picture size="90" />
-        <user-picture size="120" type="story-circle" />
-        <user-picture size="120" type="watched-story-circle" />
+        <user-picture src="https://picsum.photos/150/150" size="90" />
+        <user-picture src="https://picsum.photos/150/150" size="120" type="story-circle" />
+        <user-picture src="https://picsum.photos/150/150" size="120" type="watched-story-circle" />
       </div>
     </div>
 
@@ -208,6 +208,7 @@
       <wide-post/>
     </div>
 
+    <!-- Login Layout -->
     <div class="component">
       <h1>LoginLayout</h1>
 
@@ -216,6 +217,7 @@
       </login-layout>
     </div>
 
+  <!-- HomeLayout -->
     <div class="component">
       <h1>HomeLayout</h1>
 
@@ -224,6 +226,7 @@
       </home-layout>
     </div>
 
+  <!-- Footer -->
     <div class="component">
       <h1>Footer</h1>
 
