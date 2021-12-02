@@ -9,11 +9,10 @@
               Arkadaşlarının fotoğraf ve videolarını görmek için kaydol.
             </div>
             <div class="facebook-login">
-              <Button class="facebook-login-btn" backgroundColor="blue" textColor="white">
-                <div class="facebook-logo">
-                </div>
+              <Button :truncate="true" class="facebook-login-btn" backgroundColor="blue" textColor="white">
+                <div class="facebook-logo"/>
                 Facebook ile Giriş Yap
-                </Button>
+              </Button>
             </div>
             <div class="or-area">
               <div class="or-interline"></div>
@@ -21,16 +20,16 @@
               <div class="or-interline"></div>
             </div>
             <div class="form-input">
-              <Input placeholder="Cep Telefonu Numarası veya E-posta" :height="38"/>
+              <Input type="text" placeholder="Cep Telefonu Numarası veya E-posta" v-model="email" :isFilled="email !== ''" />
             </div>
             <div class="form-input">
-              <Input placeholder="Adı Soyadı" :height="38"/>
+              <Input type="text" placeholder="Adı Soyadı" v-model="name" :isFilled="name !== ''" />
             </div>
             <div class="form-input">
-              <Input placeholder="Kullanıcı Adı" :height="38"/>
+              <Input type="text" placeholder="Kullanıcı Adı" v-model="username" :isFilled="username !== ''" />
             </div>
             <div class="form-input">
-              <Input type="password" placeholder="Şifre" :height="38"/>
+              <Input type="password" placeholder="Şifre" v-model="passowrd" :isFilled="password !== ''" />
             </div>
             <div class="register-button">
               <Button class="register-btn" backgroundColor="blue" textColor="white">Kaydol</Button>
@@ -75,6 +74,15 @@ export default Vue.extend({
   components: {
     Button,
     Input,
+  },
+
+  data() {
+    return {
+      email: '',
+      username: '',
+      password: '',
+      name: '',
+    };
   },
 });
 </script>

@@ -98,7 +98,7 @@ export default Vue.extend({
       pointer-events: none;
       transition: all 1s ease-in-out;
       transform-origin: top;
-      transition-duration: 400ms;
+      transition-duration: 200ms;
     }
 
     input {
