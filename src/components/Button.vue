@@ -1,5 +1,5 @@
 <template>
-  <button :class="`${backgroundColor} text-${textColor}`">
+  <button :class="`${backgroundColor} text-${textColor}  ${truncate && 'truncate'}`">
     <slot />
   </button>
 </template>
@@ -18,6 +18,11 @@
         type: String,
         required: true,
       },
+
+      truncate: {
+        type: Boolean,
+        default: false,
+      },
     },
   });
 </script>
@@ -29,11 +34,14 @@
     border:0;
     cursor: pointer;
     padding: 8px;
+    width:100%;
+    height: 100%;
+  }
+
+  .truncate {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow:hidden;
-    width:100%;
-    height: 100%;
   }
 
   .text-black {

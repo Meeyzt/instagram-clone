@@ -7,13 +7,13 @@
           </div>
           <div class="form">
             <div class="username-input">
-              <Input type="text" placeholder="amcan" v-model="username" :isFilled="username !== ''" />
+              <Input type="text" placeholder="" v-model="username" :isFilled="username !== ''" />
             </div>
             <div class="password-input">
               <Input type="password" placeholder="baban" v-model="password" :isFilled="password !== ''" />
             </div>
             <div class="login-button">
-              <Button backgroundColor="blue" textColor="white">Giriş Yap</Button>
+              <Button backgroundColor="blue" :truncate="true" textColor="white">Giriş Yap</Button>
             </div>
             <div class="or-area">
               <div class="or-interline"></div>
@@ -21,7 +21,7 @@
               <div class="or-interline"></div>
             </div>
             <div class="facebook-login">
-              <Button class="facebook-login-btn" backgroundColor="transparent" textColor="darkblue">
+              <Button class="facebook-login-btn" backgroundColor="transparent" :truncate="true" textColor="darkblue">
                 <div class="facebook-logo">
                 </div>
                 Facebook ile Giriş Yap
@@ -35,7 +35,7 @@
       </div>
       <div class="box-area">
         <div class="register-text">
-          <span>Hesabın yok mu? &nbsp; {{username}}</span>
+          <span>Hesabın yok mu? &nbsp;</span>
           <router-link :to="'/accounts/emailsignup'" class="register-link" href="">Kaydol</router-link>
         </div>
       </div>
