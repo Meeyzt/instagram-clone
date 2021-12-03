@@ -112,14 +112,26 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   @media only screen and (max-width: 735px) {
-    .sidebar {
-      display: none;
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+
+      .sidebar {
+        display: none;
+      }
     }
   }
 
   @media only screen and (min-width: 735px) {
-    .sidebar {
-      display: flex;
+    .container {
+      padding-left:72px;
+      padding-right: 72px;
+      padding-top: 30px;
+
+      .sidebar {
+        display: flex;
+      }
     }
   }
 
@@ -129,9 +141,6 @@ export default Vue.extend({
     background: white;
 
     .container {
-      padding-top: 30px;
-      padding-left: 72px;
-      padding-right: 72px;
       background: #fafafa;
 
       a {
