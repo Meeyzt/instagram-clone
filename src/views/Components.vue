@@ -6,9 +6,9 @@
       <h1>Input</h1>
 
       <div style="max-width:300px">
-        <Input placeholder="ANAdwqdlwqnkdlnwqlkdnklwqndlknwqkldknwqklnN" :height="30"/>
+        <Input placeholder="ANAdwqdlwqnkdlnwqlkdnklwqndlknwqkldknwqklnN" type="text" v-model="input1" :isFilled="input1 !== ''"/>
         <br>
-        <Input type="password" placeholder="dlkwqmkldmqwkldklqwmdqwklmdklwqmldmwqkldmlk" :width="400" :height="60" :font="34"/>
+        <Input type="password" placeholder="dlkwqmkldmqwkldklqwmdqwklmdklwqmldmwqkldmlk" v-model="input2" :isFilled="input2 !== ''"/>
       </div>
     </div>
 
@@ -226,6 +226,15 @@
       </home-layout>
     </div>
 
+    <!-- SettingsLayout -->
+    <div class="component">
+      <h1>SettingsLayout</h1>
+
+      <settings-layout>
+        <post/>
+      </settings-layout>
+    </div>
+
   <!-- Footer -->
     <div class="component">
       <h1>Footer</h1>
@@ -260,6 +269,7 @@ import GridPost from '@/components/GridPost.vue';
 import WidePost from '@/components/WidePost.vue';
 import Footer from '@/components/Footer.vue';
 import SettingsEdit from '@/components/SettingsEdit.vue';
+import SettingsLayout from '@/layouts/SettingsLayout.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -336,6 +346,14 @@ export default Vue.extend({
     Footer,
     HomeLayout,
     SettingsEdit,
+    SettingsLayout,
+  },
+
+  data() {
+    return {
+      input1: '',
+      input2: '',
+    };
   },
 });
 </script>
