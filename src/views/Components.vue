@@ -75,7 +75,7 @@
         </icon-base>
 
         <icon-base :width="32" :height="32">
-          <new-message-icon :filled="true" />
+          <new-message-icon />
         </icon-base>
 
         <icon-base :width="32" :height="32">
@@ -235,6 +235,15 @@
       </settings-layout>
     </div>
 
+    <!-- MessagesLayout -->
+    <div class="component">
+      <h1>MessagesLayout</h1>
+
+      <messages-layout>
+        <post/>
+      </messages-layout>
+    </div>
+
   <!-- Footer -->
     <div class="component">
       <h1>Footer</h1>
@@ -256,6 +265,7 @@ import GridPost from '@/components/GridPost.vue';
 import WidePost from '@/components/WidePost.vue';
 import Footer from '@/components/Footer.vue';
 import SettingsLayout from '@/layouts/SettingsLayout.vue';
+import MessagesLayout from '@/layouts/MessagesLayout.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -332,6 +342,7 @@ export default Vue.extend({
     Footer,
     HomeLayout,
     SettingsLayout,
+    MessagesLayout,
   },
 
   data() {

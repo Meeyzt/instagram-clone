@@ -133,7 +133,6 @@ export default Vue.extend({
         display: flex;
       }
     }
-
   }
 
   .home-layout {
