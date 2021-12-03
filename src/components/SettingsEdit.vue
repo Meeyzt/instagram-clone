@@ -5,7 +5,7 @@
       </div>
       <div class="content">
         <div v-if="inputHeight" class="input">
-          <Input :placeholder="placeholder" :height="inputHeight"/>
+          <Input :placeholder="placeholder" type="text" v-model="inputData" :isFilled="inputData !== ''"/>
         </div>
         <div class="description-area">
           <div v-if="descriptionTitle" class="title">{{ descriptionTitle }}
@@ -28,6 +28,12 @@ import Input from '@/components/Input.vue';
 export default Vue.extend({
   components: {
     Input,
+  },
+
+  data() {
+    return {
+      inputData: '',
+    };
   },
 
   props: {
@@ -60,6 +66,11 @@ export default Vue.extend({
 .edit {
   display: flex;
   flex-direction: column;
+  max-width: 449px;
+
+  @media screen and (min-width: 736px) {
+    flex-direction: row;
+  }
 
   .title {
     display: flex;
@@ -67,11 +78,16 @@ export default Vue.extend({
     font-weight: 600;
     line-height: 18px;
     height: 25px;
+
+    @media screen and (min-width: 736px) {
+      width: 194px;
+    }
   }
 
   .content {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     .input {
 

@@ -254,6 +254,15 @@
       :linkUrl="'/'"
       :linkText="'Link Yazısı'"/>
     </div>
+
+    <div class="component">
+      <h1>PasswordReset</h1>
+
+      <PasswordReset
+        :inputHeight="40"
+        :title="'Deneme'"
+      />
+    </div>
   </div>
 </template>
 
@@ -270,6 +279,7 @@ import WidePost from '@/components/WidePost.vue';
 import Footer from '@/components/Footer.vue';
 import SettingsEdit from '@/components/SettingsEdit.vue';
 import SettingsLayout from '@/layouts/SettingsLayout.vue';
+import PasswordReset from '@/components/PasswordReset.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -347,6 +357,7 @@ export default Vue.extend({
     HomeLayout,
     SettingsEdit,
     SettingsLayout,
+    PasswordReset,
   },
 
   data() {
