@@ -75,7 +75,7 @@
         </icon-base>
 
         <icon-base :width="32" :height="32">
-          <new-message-icon :filled="true" />
+          <new-message-icon />
         </icon-base>
 
         <icon-base :width="32" :height="32">
@@ -235,6 +235,15 @@
       </settings-layout>
     </div>
 
+    <!-- MessagesLayout -->
+    <div class="component">
+      <h1>MessagesLayout</h1>
+
+      <messages-layout>
+        <post/>
+      </messages-layout>
+    </div>
+
   <!-- Footer -->
     <div class="component">
       <h1>Footer</h1>
@@ -280,6 +289,7 @@ import Footer from '@/components/Footer.vue';
 import SettingsEdit from '@/components/SettingsEdit.vue';
 import SettingsLayout from '@/layouts/SettingsLayout.vue';
 import PasswordReset from '@/components/PasswordReset.vue';
+import MessagesLayout from '@/layouts/MessagesLayout.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -358,6 +368,7 @@ export default Vue.extend({
     SettingsEdit,
     SettingsLayout,
     PasswordReset,
+    MessagesLayout,
   },
 
   data() {
