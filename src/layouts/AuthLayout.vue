@@ -11,13 +11,16 @@ import Vue from 'vue';
 import Footer from '@/components/Footer.vue';
 
 export default Vue.extend({
-  components: { Footer },
+  components: {
+    Footer,
+  },
 
 });
 </script>
 
 <style lang="scss" scoped>
 .auth-layout {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

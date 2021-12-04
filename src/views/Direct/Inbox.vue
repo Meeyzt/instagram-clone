@@ -1,6 +1,5 @@
 <template>
-  <div>
-  </div>
+  <div>SElam</div>
 </template>
 
 <script lang="ts">

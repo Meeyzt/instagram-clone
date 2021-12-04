@@ -40,18 +40,20 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+  div {
+    cursor: pointer;
+  }
+
   .story-circle {
     display: flex;
     align-items: center;
     border-radius: 9999px;
     justify-content: center;
-    width: 100%;
-    height: 100%;
     background: linear-gradient(to right, red, orange, purple);
 
     img {
-      width: 90%;
-      height: 90%;
+      width: 100%;
+      height: 100%;
       border-radius: 9999px;
     }
     }
@@ -60,8 +62,6 @@ export default Vue.extend({
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
       border: 1px solid rgba(0, 0, 0, 0.4);
       border-radius: 999999px;
 
@@ -77,8 +77,6 @@ export default Vue.extend({
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
       border-radius: 999999px;
 
       img {
