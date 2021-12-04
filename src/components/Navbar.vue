@@ -2,18 +2,19 @@
   <div class="navbar-router">
 
     <router-link
-    to="/"
+      to="/"
+      exact
     >
       <icon-base :width="22" :height="22">
-        <home-icon :filled="true"/>
+        <home-icon :filled="$route.name !== 'Home' ? false : true"/>
       </icon-base>
     </router-link>
 
     <router-link
-    to="/"
+      to="/direct/inbox"
     >
       <icon-base :width="22" :height="22">
-        <messenger-icon/>
+        <messenger-icon :filled="$route.matched[0].path !== '/direct' ? false : true"/>
       </icon-base>
     </router-link>
 
@@ -26,15 +27,15 @@
     </router-link>
 
     <router-link
-    to="/"
+    to="/explore"
     >
       <icon-base :width="22" :height="22">
-        <explore-icon/>
+        <explore-icon :filled="$route.name !== 'Explore' ? false : true"/>
       </icon-base>
     </router-link>
 
     <router-link
-    to="/"
+      to="/"
     >
       <icon-base :width="22" :height="22">
         <like-icon/>
@@ -42,9 +43,13 @@
     </router-link>
 
     <router-link
-    to="/"
+      to="/_meeyzt"
     >
-      <user-picture src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png" size="22"/>
+      <user-picture
+        src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
+        size="26"
+        :type="$route.name !== 'User' ? 'normal' : 'watched-story'"
+      />
     </router-link>
   </div>
 </template>
@@ -82,6 +87,11 @@ export default Vue.extend({
     align-items: center;
 
     a:visited {
+      color: black;
+      text-decoration: none;
+    }
+
+    a {
       color: black;
       text-decoration: none;
     }

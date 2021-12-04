@@ -7,7 +7,7 @@
     </div>
     <div class="sidebar">
       <div class="header">
-        <user-picture src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png" size="56"/>
+        <user-picture type="watched-story" src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png" size="56"/>
         <div class="title">
           <div class="username">_meeyzt</div>
           <div class="name">Mehmet</div>
@@ -95,19 +95,44 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+  @media screen and (min-width: 1000px){
+    .main {
+      padding: 32px 5vw 0 4vw ;
+
+      .content {
+        width: 600px;
+      }
+      .sidebar {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px){
+    .main {
+      padding: 32px 0 0 0;
+
+      .content {
+        width: 600px;
+      }
+      .sidebar {
+        display: none;
+      }
+    }
+  }
+
   .home-layout {
     height: 100%;
 
     .main {
       display: flex;
-      padding: 32px 32px 0 72px;
       gap:20px;
       background: #fafafa;
       overflow: hidden;
-      height: 95%;
+      height: 93.33%;
+      justify-content: center;
 
       .content {
-        width: 80%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -119,7 +144,8 @@ export default Vue.extend({
         min-width: 290px;
         max-width: 290px;
         flex: 1;
-        padding-top: 20px;
+        margin-bottom: 10px;
+        margin-top: 18px;
 
         .btn-bar {
           font-size: 12px;
@@ -146,6 +172,7 @@ export default Vue.extend({
 
             .username {
               font-weight: bold;
+              cursor: pointer;
             }
 
             .name {

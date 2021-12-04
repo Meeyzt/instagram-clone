@@ -74,7 +74,10 @@
 
 .holder {
   background: #fafafa;
+  height: 100%;
+
   .messages {
+    height:100%;
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: white;
