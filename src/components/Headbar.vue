@@ -5,7 +5,7 @@
       src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
     />
 
-    <div v-if="!isEnterPage" class="search-bar text-gray">
+    <div v-if="isEnterPage" class="search-bar text-gray">
       <input type="text" placeholder="Ara..." />
 
       <div class="search-placeholder">
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <navbar v-if="!isEnterPage" />
+    <navbar v-if="isEnterPage" />
   </div>
 </template>
 
@@ -28,6 +28,13 @@ export default Vue.extend({
   components: {
     Logo,
     Navbar,
+  },
+
+  props: {
+    isEnterPage: {
+      type: Boolean,
+      default: true,
+    },
   },
 });
 </script>

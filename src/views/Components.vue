@@ -177,9 +177,9 @@
       <h1>UserPicture</h1>
 
       <div class="flex-row gap">
-        <user-picture src="https://picsum.photos/150/150" size="90" />
-        <user-picture src="https://picsum.photos/150/150" size="120" type="story-circle" />
-        <user-picture src="https://picsum.photos/150/150" size="120" type="watched-story" />
+        <user-picture src="https://picsum.photos/150/150" :size="90" />
+        <user-picture src="https://picsum.photos/150/150" :size="120" type="story-circle" />
+        <user-picture src="https://picsum.photos/150/150" :size="120" type="watched-story" />
       </div>
     </div>
 

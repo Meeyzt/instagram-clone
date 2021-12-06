@@ -7,19 +7,19 @@
 
         <div class="sidebar">
 
-          <div class="sidebar-items">
+          <div class="sidebar-items" v-if="tabs">
             <router-link
-              :active="active"
+              active="active"
               v-for="tab in tabs"
               :to="tab.url"
-              :key="tab.text"
+              :key="tab.key"
               class="item"
             >
               {{tab.text}}
             </router-link>
 
             <router-link
-              :active="active"
+              active="active"
               to="/accounts/convert-to-professional-account"
               class="prof bluebtn"
             >

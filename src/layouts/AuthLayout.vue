@@ -1,5 +1,6 @@
 <template>
   <div class="auth-layout">
+    <headbar :isEnterPage="false"/>
     <slot />
     <Footer />
   </div>
@@ -9,10 +10,12 @@
 import Vue from 'vue';
 
 import Footer from '@/components/Footer.vue';
+import Headbar from '@/components/Headbar.vue';
 
 export default Vue.extend({
   components: {
     Footer,
+    Headbar,
   },
 
 });

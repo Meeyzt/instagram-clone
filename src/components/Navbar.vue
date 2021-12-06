@@ -47,7 +47,7 @@
     >
       <user-picture
         src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
-        size="26"
+        :size="26"
         :type="$route.name !== 'User' ? 'normal' : 'watched-story'"
       />
     </router-link>
