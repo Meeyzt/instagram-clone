@@ -90,7 +90,7 @@
           </div>
 
           <div class="like">
-            <user-picture src="https://picsum.photos/150/150" size="20"/>
+            <user-picture src="https://picsum.photos/150/150" :size="20"/>
             <span>Ayça ve 42.950 diğer kişi</span> beğendi
           </div>
 

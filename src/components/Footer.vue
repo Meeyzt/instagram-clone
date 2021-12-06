@@ -59,40 +59,40 @@ export default Vue.extend({
     return {
       links: [
         {
-          id: 1, text: 'Meta', link: '', point: true,
+          id: 'Foo1', text: 'Meta', link: '', point: true,
         },
         {
-          id: 2, text: 'Hakkında', link: '', point: true,
+          id: 'Foo2', text: 'Hakkında', link: '', point: true,
         },
         {
-          id: 3, text: 'Blog', link: '', point: true,
+          id: 'Foo3', text: 'Blog', link: '', point: true,
         },
         {
-          id: 4, text: 'İş Fırsatları', link: '', point: true,
+          id: 'Foo4', text: 'İş Fırsatları', link: '', point: true,
         },
         {
-          id: 5, text: 'Yardım', link: '', point: true,
+          id: 'Foo5', text: 'Yardım', link: '', point: true,
         },
         {
-          id: 5, text: 'API', link: '', point: true,
+          id: 'Foo6', text: 'API', link: '', point: true,
         },
         {
-          id: 5, text: 'Gizlilik', link: '', point: true,
+          id: 'Foo7', text: 'Gizlilik', link: '', point: true,
         },
         {
-          id: 5, text: 'Koşullar', link: '', point: true,
+          id: 'Foo8', text: 'Koşullar', link: '', point: true,
         },
         {
-          id: 5, text: 'Başlıca Hesaplar', link: '', point: true,
+          id: 'Foo9', text: 'Başlıca Hesaplar', link: '', point: true,
         },
         {
-          id: 5, text: 'Konu Etiketleri', link: '', point: true,
+          id: 'Foo10', text: 'Konu Etiketleri', link: '', point: true,
         },
         {
-          id: 5, text: 'Konumlar', link: '', point: true,
+          id: 'Foo11', text: 'Konumlar', link: '', point: true,
         },
         {
-          id: 5, text: 'Instagram Lite', link: '', point: false,
+          id: 'Foo12', text: 'Instagram Lite', link: '', point: false,
         },
       ],
     };

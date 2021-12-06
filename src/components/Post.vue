@@ -3,7 +3,7 @@
     <div class="post-titlebar">
       <div class="post-title">
         <div class="post-profile-image">
-          <user-picture src="https://picsum.photos/150/150" />
+          <user-picture :size="32" src="https://picsum.photos/150/150" />
         </div>
 
         <span>thefunmarvel</span>
@@ -135,8 +135,6 @@ export default Vue.extend({
       gap: 10px;
 
       .post-profile-image {
-        width: 32px;
-        height: 32px;
         box-sizing: border-box;
         cursor: pointer;
       }
