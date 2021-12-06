@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" v-for="index in 32" :key="index"/>
+    <grid-post class="grid-item" v-for="index in 5" :key="index"/>
   </div>
 </template>
 

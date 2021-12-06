@@ -1,6 +1,6 @@
 <template>
 <profile-layout>
-  Selam
+  <router-view/>
 </profile-layout>
 </template>
 

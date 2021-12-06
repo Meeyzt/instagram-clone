@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="link">
+  <router-link class="logo" :to="link">
     <img :src="src" alt="logo" />
   </router-link>
 </template>
@@ -21,3 +21,10 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+</style>

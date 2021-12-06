@@ -152,6 +152,11 @@ const routes: Array<RouteConfig> = [
         ],
       },
       {
+        path: '',
+        name: 'Gönderiler',
+        component: () => import(/* webpackChunkName: "Posts" */'../views/User/Posts.vue'),
+      },
+      {
         path: 'following',
         name: 'Following',
         component: () => import(/* webpackChunkName: "Following" */'../views/User/Following.vue'),

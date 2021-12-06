@@ -6,7 +6,9 @@
           <user-picture :size="32" src="https://picsum.photos/150/150" />
         </div>
 
-        <span>thefunmarvel</span>
+        <router-link class="link" to="/thefunmarvel">
+          <span>thefunmarvel</span>
+        </router-link>
         </div>
 
         <div>
@@ -133,6 +135,11 @@ export default Vue.extend({
       flex-direction: row;
       align-items: center;
       gap: 10px;
+
+      .link {
+        text-decoration: none;
+        color: black;
+      }
 
       .post-profile-image {
         box-sizing: border-box;
