@@ -1,40 +1,72 @@
 <template>
 <div class="home-layout">
   <headbar/>
+
   <div class="main">
     <div class="content">
       <slot />
     </div>
+
     <div class="sidebar">
       <div class="header">
-        <user-picture type="watched-story" src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png" :size="56"/>
+        <user-picture
+          type="watched-story"
+          src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
+          :size="56"
+        />
         <div class="title">
           <div class="username">_meeyzt</div>
           <div class="name">Mehmet</div>
         </div>
+
         <div>
-          <Button class="btn-bar" backgroundColor="transparent" textColor="blue" > Geçiş Yap </Button>
+          <Button
+            class="btn-bar"
+            backgroundColor="transparent"
+            textColor="blue"
+          >
+            Geçiş Yap
+          </Button>
         </div>
       </div>
+
       <div class="suggested-acc-header">
         <div class="suggested-text">Senin İçin Önerilen</div>
+
         <div>
           <Button class="btn-bar" backgroundColor="transparent" textColor="black"> Tümünü Gör </Button>
         </div>
       </div>
+
       <div class="suggested-acc" v-for="(user, index) in userInfo" :key="index+99">
         <div class="user">
           <user-picture :src="user.pic" :size="32"/>
+
           <div class="title">
             <div class="username">{{user.username}}</div>
             <div class="name">{{user.detail}}</div>
           </div>
+
         </div>
+
         <div>
-          <Button v-if="!user.request" class="btn-bar" backgroundColor="transparent" textColor="blue" > Takip Et </Button>
-          <Button v-else class="btn-bar" backgroundColor="transparent" textColor="black" > İstek Gönderildi </Button>
+          <Button
+            class="btn-bar"
+            backgroundColor="transparent"
+            textColor="blue"
+            v-if="!user.request"
+          >
+            Takip Et
+          </Button>
+          <Button
+            class="btn-bar"
+            backgroundColor="transparent"
+            textColor="black"
+            v-else
+          > İstek Gönderildi </Button>
         </div>
       </div>
+
       <Footer :isHome="true" class="footer"/>
     </div>
   </div>
@@ -128,7 +160,7 @@ export default Vue.extend({
       display: flex;
       gap:20px;
       background: #fafafa;
-      overflow: hidden;
+      overflow: auto;
       height: 93.33%;
       justify-content: center;
 
@@ -137,7 +169,8 @@ export default Vue.extend({
         display: flex;
         flex-direction: column;
         gap: 16px;
-        overflow-y: auto;
+
+        margin-right: 200px;
       }
 
       .sidebar {
@@ -146,6 +179,8 @@ export default Vue.extend({
         flex: 1;
         margin-bottom: 10px;
         margin-top: 18px;
+        position: fixed;
+        right: 72px;
 
         .btn-bar {
           font-size: 12px;
