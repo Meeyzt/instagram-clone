@@ -2,9 +2,9 @@
   <div class="post-container">
     <div class="post-titlebar">
       <div class="post-title">
-        <div class="post-profile-image">
+        <router-link to="/thefunmarvel" class="post-profile-image">
           <user-picture :size="32" src="https://picsum.photos/150/150" />
-        </div>
+        </router-link>
 
         <router-link class="link" to="/thefunmarvel">
           <span>thefunmarvel</span>
@@ -60,7 +60,7 @@
       </div>
 
       <div class="post-description-subText">
-        <span class="username">thefunmarvel</span> <span class="description"> Spiderman yeni fragman</span>
+        <router-link to="/thefunmarvel" class="username">thefunmarvel</router-link> <span class="description"> Spiderman yeni fragman</span>
       </div>
 
       <div class="post-description-comments">

@@ -6,6 +6,7 @@
     <div class="content">
       <slot />
     </div>
+    <div class="empty"></div>
 
     <div class="sidebar">
       <div class="header">
@@ -147,6 +148,10 @@ export default Vue.extend({
       .content {
         width: 600px;
       }
+
+      .empty {
+        display: none;
+      }
       .sidebar {
         display: none;
       }
@@ -155,13 +160,15 @@ export default Vue.extend({
 
   .home-layout {
     height: 100%;
+    display: flex;
+    flex-direction: column;
 
     .main {
       display: flex;
       gap:20px;
       background: #fafafa;
       overflow: auto;
-      height: 93.33%;
+      height: 100%;
       justify-content: center;
 
       .content {
@@ -169,18 +176,18 @@ export default Vue.extend({
         display: flex;
         flex-direction: column;
         gap: 16px;
+      }
 
-        margin-right: 200px;
+      .empty {
+        min-width: 290px;
+        max-width: 290px;
       }
 
       .sidebar {
         min-width: 290px;
         max-width: 290px;
-        flex: 1;
-        margin-bottom: 10px;
-        margin-top: 18px;
-        position: fixed;
         right: 72px;
+        position: absolute;
 
         .btn-bar {
           font-size: 12px;

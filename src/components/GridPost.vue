@@ -52,7 +52,6 @@ export default Vue.extend({
       }
 
       img {
-        object-fit: center;
         width: 100%;
         height: 100%;
       }
