@@ -42,6 +42,7 @@
           <icon-base :width="24" :height="24">
             <like-icon />
           </icon-base>
+          asdasda
       </div>
     </div>
   </div>
