@@ -2,11 +2,13 @@
   <div class="post-container">
     <div class="post-titlebar">
       <div class="post-title">
-        <div class="post-profile-image">
+        <router-link to="/thefunmarvel" class="post-profile-image">
           <user-picture :size="32" src="https://picsum.photos/150/150" />
-        </div>
+        </router-link>
 
-        <span>thefunmarvel</span>
+        <router-link class="link" to="/thefunmarvel">
+          <span>thefunmarvel</span>
+        </router-link>
         </div>
 
         <div>
@@ -58,7 +60,7 @@
       </div>
 
       <div class="post-description-subText">
-        <span class="username">thefunmarvel</span> <span class="description"> Spiderman yeni fragman</span>
+        <router-link to="/thefunmarvel" class="username">thefunmarvel</router-link> <span class="description"> Spiderman yeni fragman</span>
       </div>
 
       <div class="post-description-comments">
@@ -133,6 +135,11 @@ export default Vue.extend({
       flex-direction: row;
       align-items: center;
       gap: 10px;
+
+      .link {
+        text-decoration: none;
+        color: black;
+      }
 
       .post-profile-image {
         box-sizing: border-box;

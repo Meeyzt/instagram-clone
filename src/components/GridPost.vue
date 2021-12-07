@@ -1,7 +1,7 @@
 <template>
   <div class="gridPost">
     <div class="photo">
-      <img src="https://picsum.photos/300/300" alt="wqd" />
+      <img src="https://picsum.photos/900/900" alt="wqd" />
       <div class="hover">
         <div class="hover-item-center">
           <icon-base :width="19" :height="19">
@@ -49,6 +49,11 @@ export default Vue.extend({
         .hover {
           display: flex;
         }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
       }
 
       .hover {

@@ -21,7 +21,7 @@
         </div>
 
         <ul class="message-list">
-          <li v-for="message in messageData" :key="message.username" class="message">
+          <router-link tag="li" :to="`/direct/t/${message.username}`" v-for="message in messageData" :key="message.username" class="message">
             <div class="item">
               <div>
                 <user-picture class="picture" :src="message.pic" :size="56" />
@@ -35,7 +35,7 @@
                 </div>
               </div>
             </div>
-          </li>
+          </router-link>
         </ul>
 
       </div>
@@ -49,25 +49,29 @@
 
 <style lang="scss" scoped>
   @media only screen and (max-width: 735px) {
-    .messages {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
+    .holder {
+      .messages {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
 
-      .sidebar {
-        display: none;
+        .sidebar {
+          display: none;
+        }
       }
     }
   }
 
   @media only screen and (min-width: 735px) {
-    .messages {
-      margin-left:72px;
-      margin-right: 72px;
-      margin-top: 30px;
+    .holder {
+      .messages {
+        margin-left:72px;
+        margin-right: 72px;
+        margin-top: 30px;
 
-      .sidebar {
-        display: block;
+        .sidebar {
+          display: block;
+        }
       }
     }
   }
@@ -75,6 +79,9 @@
 .holder {
   background: #fafafa;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
 
   .messages {
     height:100%;
@@ -158,6 +165,11 @@
 
         }
       }
+    }
+
+    .content {
+      height: 100%;
+      width: 100%;
     }
   }
 }
