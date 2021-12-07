@@ -88,10 +88,11 @@
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: white;
+    overflow: hidden;
 
     .sidebar {
       border-right: 1px solid rgba(0, 0, 0, 0.1);
-      width: 300px;
+      width: 350px;
 
       .head {
         padding-left: 20px;
