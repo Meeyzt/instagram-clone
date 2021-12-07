@@ -272,6 +272,31 @@
         :title="'Deneme'"
       />
     </div>
+
+    <div class="component">
+      <h1>SettingCheckbox</h1>
+
+      <SettingCheckbox
+        :isChecked="true"
+        :title="'Deneme'"
+        :description="'DenemeAçıklaması'"
+      />
+    </div>
+
+    <div class="component">
+      <h1>SettingCheckbox</h1>
+
+      <radio-button
+        :isChecked="true"
+        :title="'Deneme'"
+        :name="'deneme1'"
+      />
+      <radio-button
+        :isChecked="true"
+        :title="'Deneme'"
+        :name="'deneme1'"
+      />
+    </div>
   </div>
 </template>
 
@@ -290,6 +315,8 @@ import SettingsEdit from '@/components/SettingsEdit.vue';
 import SettingsLayout from '@/layouts/SettingsLayout.vue';
 import PasswordReset from '@/components/PasswordReset.vue';
 import MessagesLayout from '@/layouts/MessagesLayout.vue';
+import SettingCheckbox from '@/components/SettingCheckbox.vue';
+import RadioButton from '@/components/RadioButton.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -369,6 +396,8 @@ export default Vue.extend({
     SettingsLayout,
     PasswordReset,
     MessagesLayout,
+    SettingCheckbox,
+    RadioButton,
   },
 
   data() {

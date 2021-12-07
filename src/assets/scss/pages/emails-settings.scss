@@ -1,0 +1,13 @@
+.emails-settings {
+  display: flex;
+  margin: 24px 32px 32px 64px;
+  flex-direction: column;
+  gap: 25px;
+
+  .title {
+    display: flex;
+    color: rgb(38, 38, 38);
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
