@@ -1,5 +1,5 @@
 <template>
-  <div class="home-layout">
+  <div class="settings-layout">
     <Headbar/>
 
     <div class="container">
@@ -135,13 +135,19 @@ export default Vue.extend({
     }
   }
 
-  .home-layout {
+  .settings-layout {
     width: 100%;
     height: 100%;
     background: white;
+    overflow: hidden;
 
     .container {
       background: #fafafa;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
 
       a {
         color:black;
@@ -153,6 +159,7 @@ export default Vue.extend({
         display: flex;
         gap:5px;
         background: white;
+        width: 100%;
 
         .sidebar {
           flex-direction: column;
@@ -162,6 +169,7 @@ export default Vue.extend({
           font-size: 16px;
           border-right: 1px solid #dbdbdb;
           flex: 0;
+          height: 100%;
 
           .bluebtn {
             color: #0095f6;
@@ -206,7 +214,6 @@ export default Vue.extend({
             display: flex;
             flex-direction: column;
             gap: 16px;
-            height: 100%;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
             padding-top: 28px;
             padding-bottom: 28px;
@@ -223,6 +230,8 @@ export default Vue.extend({
         .content {
           width: 100%;
           height: 100%;
+          display: flex;
+          flex-direction: column;
         }
       }
     }

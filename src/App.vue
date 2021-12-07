@@ -18,11 +18,4 @@ export default Vue.extend({
     width: 100vw;
     height: 100vh;
   }
-
-  .content {
-    display: flex;
-    justify-content: flex-end;
-    gap: 40px;
-    padding-right: 100px;
-  }
 </style>

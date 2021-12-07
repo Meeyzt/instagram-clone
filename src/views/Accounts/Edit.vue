@@ -62,11 +62,12 @@
           </div>
           <div class="content">
             <div class="checkbox-area">
-              <input class="checkbox" type="checkbox" />
-            </div>
-            <div class="description">
-              <span>İnsanlara takip etmek isteyebilecekleri benzer hesaplar tavsiye edilirken hesabını tavsiyeler arasına ekle.</span>
-              <span class="link"> [?]</span>
+              <input name="chx" class="checkbox" type="checkbox" />
+
+              <label name="chx" class="description">
+                <span>İnsanlara takip etmek isteyebilecekleri benzer hesaplar tavsiye edilirken hesabını tavsiyeler arasına ekle.</span>
+                <span class="link"> [?]</span>
+            </label>
             </div>
           </div>
         </div>

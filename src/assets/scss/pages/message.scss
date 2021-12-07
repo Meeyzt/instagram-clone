@@ -21,13 +21,12 @@
       gap: 10px;
       align-items: center;
 
-      .avatar-img {
-
-      }
-
       .avatar-name {
-
+        color: black;
+        text-decoration: none;
+        font-weight: 500;
       }
+
     }
 
     .info-btn {
@@ -44,6 +43,7 @@
     padding: 20px;
     gap: 8px;
     overflow-y: scroll;
+    font-size: 14px;
 
     .message-box-by-me {
       display: flex;
@@ -60,34 +60,54 @@
   }
 
   .footer {
-    display: flex;
-    flex-direction: row;
     padding: 20px;
-    align-items: center;
     width: 100%;
     height: 85px;
-    gap: 8px;
     justify-self: flex-end;
 
-    .emoji {
+    .footer-margin {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      margin: 4px;
       display: flex;
-      justify-content: flex-start;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      padding: 0 8px;
+      border-radius: 999px;
+      padding-left: 11px;
+      padding-right: 8px;
 
-    }
+      .emoji {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+  
+      }
+  
+      .message-input {
+        display: flex;
+        width: 100%;
 
-    .message-input {
-      display: flex;
-      width: 100%;
-    }
-
-    .add-photo {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .send-heart {
-      display: flex;
-      justify-content: flex-end;
+        input {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          outline: none;
+          padding: 8px 9px;
+        }
+      }
+  
+      .add-photo {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .send-heart {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
