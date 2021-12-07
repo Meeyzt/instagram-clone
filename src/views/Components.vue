@@ -250,6 +250,53 @@
 
       <Footer />
     </div>
+
+    <div class="component">
+      <h1>SettingsEdit</h1>
+
+      <SettingsEdit
+      :title="'EditBaşlığı'"
+      :placeholder="'Placeholder'"
+      :inputHeight="32"
+      :descriptionTitle="'Açıklama Başlığı'"
+      :description="'Açıklama'"
+      :linkUrl="'/'"
+      :linkText="'Link Yazısı'"/>
+    </div>
+
+    <div class="component">
+      <h1>PasswordReset</h1>
+
+      <PasswordReset
+        :inputHeight="40"
+        :title="'Deneme'"
+      />
+    </div>
+
+    <div class="component">
+      <h1>SettingCheckbox</h1>
+
+      <SettingCheckbox
+        :isChecked="true"
+        :title="'Deneme'"
+        :description="'DenemeAçıklaması'"
+      />
+    </div>
+
+    <div class="component">
+      <h1>SettingCheckbox</h1>
+
+      <radio-button
+        :isChecked="true"
+        :title="'Deneme'"
+        :name="'deneme1'"
+      />
+      <radio-button
+        :isChecked="true"
+        :title="'Deneme'"
+        :name="'deneme1'"
+      />
+    </div>
   </div>
 </template>
 
@@ -264,8 +311,12 @@ import Button from '@/components/Button.vue';
 import GridPost from '@/components/GridPost.vue';
 import WidePost from '@/components/WidePost.vue';
 import Footer from '@/components/Footer.vue';
+import SettingsEdit from '@/components/SettingsEdit.vue';
 import SettingsLayout from '@/layouts/SettingsLayout.vue';
+import PasswordReset from '@/components/PasswordReset.vue';
 import MessagesLayout from '@/layouts/MessagesLayout.vue';
+import SettingCheckbox from '@/components/SettingCheckbox.vue';
+import RadioButton from '@/components/RadioButton.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -341,8 +392,12 @@ export default Vue.extend({
     LoginLayout,
     Footer,
     HomeLayout,
+    SettingsEdit,
     SettingsLayout,
+    PasswordReset,
     MessagesLayout,
+    SettingCheckbox,
+    RadioButton,
   },
 
   data() {

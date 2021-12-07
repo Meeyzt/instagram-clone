@@ -1,0 +1,28 @@
+.web-push-settings-page {
+  display: flex;
+  margin: 30px 24px 42px 24px;
+  flex-direction: column;
+  gap: 30px;
+
+  .notification-area {
+    border-bottom: 1px solid rgb(219,219,219);
+    .title {
+      margin-bottom: 24px;
+      font-size: 22px;
+      line-height: 26px;
+      color: rgb(38, 38, 38);
+      
+    }
+    .radio-buttons-group {
+      display: flex;
+      margin-bottom: 4px;
+    }
+    .description {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      color: rgb(142, 142, 142);
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
