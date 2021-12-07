@@ -172,11 +172,15 @@ export default Vue.extend({
   .container {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
     .main {
       padding-left: 20px;
       padding-right: 20px;
       padding-top: 30px;
+      padding-top: 60px;
+      height: 100%;
+      overflow: auto;
 
       .user-container {
         display: flex;
