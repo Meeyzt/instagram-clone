@@ -94,7 +94,7 @@ export default Vue.extend({
         text: 'Kişileri Yönet',
       },
       {
-        url: '/accounts/privacy-and-securty',
+        url: '/accounts/privacy-and-security',
         text: 'Gizlilik ve Güvenlik',
       },
       {
@@ -102,7 +102,7 @@ export default Vue.extend({
         text: 'Giriş Hareketleri',
       },
       {
-        url: '/emails/email-sent',
+        url: '/emails/emails-sent',
         text: 'Instagram\'dan E-postalar',
       }],
     };

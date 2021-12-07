@@ -37,6 +37,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/emails',
     name: 'Emails',
+    component: () => import(/* webpackChunkName: "Edit" */'../views/Emails/Index.vue'),
     children: [
       {
         path: 'settings',
