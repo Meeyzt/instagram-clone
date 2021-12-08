@@ -41,6 +41,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .headbar {
+    width: 100vw;
     background: white;
     display: flex;
     justify-content: space-around;

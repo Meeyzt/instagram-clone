@@ -1,16 +1,12 @@
 <template>
-  <AuthLayout>
-    <router-view />
-  </AuthLayout>
+  <router-view />
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import AuthLayout from '@/layouts/AuthLayout.vue';
 
 export default Vue.extend({
   components: {
-    AuthLayout,
   },
 });
 </script>

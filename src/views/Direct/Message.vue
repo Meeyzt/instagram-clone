@@ -5,44 +5,58 @@
         <div class="avatar-img">
           <user-picture src="https://picsum.photos/200/200" :size="24" />
         </div>
-        <div class="avatar-name">
+
+        <router-link :to="`/${$route.params.id}`" class="avatar-name">
           {{ $route.params.id }}
-        </div>
+        </router-link>
       </div>
+
       <div class="info-btn">
         <icon-base :width="24" :height="24">
           <info-icon />
         </icon-base>
       </div>
     </div>
+
     <div class="content">
       <div :class="message.isMe ? 'message-box-by-me' : 'message-box-by-opposite'" v-for="message in messages" :key="message.id">
         <user-picture src="https://picsum.photos/200/200" :size="24"  v-if="!message.isMe"/>
+
         <message
           :isMe="message.isMe"
           :text="message.text"
         />
       </div>
     </div>
+
     <div class="footer">
-      <div class="emoji">
+      <div class="footer-margin">
+
+        <div class="emoji">
         <icon-base :width="24" :height="24">
           <emoji-icon />
         </icon-base>
       </div>
+
       <div class="message-input">
-        <Input placeholder="Mesaj" type="text" v-model="input1" :isFilled="input1 !== ''"/>
+        <input placeholder="Mesaj" type="text" />
       </div>
+
       <div class="add-photo">
         <icon-base :width="24" :height="24">
           <gallery-icon />
         </icon-base>
       </div>
+
       <div class="send-heart">
           <icon-base :width="24" :height="24">
             <like-icon />
           </icon-base>
+          asdasda
       </div>
+
+      </div>
+
     </div>
   </div>
 </template>
@@ -58,15 +72,12 @@ import LikeIcon from '@/components/icons/LikeIcon.vue';
 import GalleryIcon from '@/components/icons/GalleryIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 
-import Input from '@/components/Input.vue';
-
 export default Vue.extend({
   components: {
     Message,
     UserPicture,
     IconBase,
     InfoIcon,
-    Input,
     EmojiIcon,
     GalleryIcon,
     LikeIcon,
@@ -74,7 +85,6 @@ export default Vue.extend({
 
   data() {
     return {
-      input1: '',
       messages: [
         {
           id: 0, text: 'asd', isMe: true,
