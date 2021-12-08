@@ -48,6 +48,7 @@ export default Vue.extend({
     display: flex;
     align-items: center;
     border-radius: 9999px;
+    padding: 2px;
     justify-content: center;
     background: linear-gradient(to right, red, orange, purple);
 

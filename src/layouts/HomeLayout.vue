@@ -4,7 +4,15 @@
 
   <div class="main">
     <div class="content">
-      <slot />
+      <div class="stories">
+        <div class="story" v-for="index in 10" :key="index">
+          <user-picture src="https://picsum.photos/450/300" :size="60" type="story-circle" />
+          Ahmet
+        </div>
+      </div>
+      <div class="posts">
+        <slot />
+      </div>
     </div>
     <div class="empty"></div>
 
