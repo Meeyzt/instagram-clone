@@ -176,6 +176,36 @@ export default Vue.extend({
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        .stories {
+          height: 116px;
+          display: flex;
+          width: 100%;
+          background: white;
+          border: 1px solid rgba(0,0,0, 0.1);
+          overflow-x: scroll;
+          overflow-y: hidden;
+          margin-bottom: 16px;
+          align-items: center;
+
+          .story {
+            padding: 16px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            font-size: 12px;
+          }
+        }
+
+        .posts {
+          display: flex;
+          flex-direction: column;
+
+          .post-container + .post-container {
+            margin-top: 16px;
+          }
+        }
       }
 
       .empty {
