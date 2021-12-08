@@ -181,6 +181,9 @@ export default Vue.extend({
 
       .content {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
 
         .stories {
           height: 116px;
@@ -188,7 +191,8 @@ export default Vue.extend({
           width: 100%;
           background: white;
           border: 1px solid rgba(0,0,0, 0.1);
-          overflow: scroll;
+          overflow-x: scroll;
+          overflow-y: hidden;
           margin-bottom: 16px;
           align-items: center;
 
