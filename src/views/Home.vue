@@ -12,14 +12,11 @@ import Post from '@/components/Post.vue';
 
 export default Vue.extend({
   name: 'Home',
+
   components: {
     HomeLayout,
     Post,
   },
 
-  data() {
-    return {
-    };
-  },
 });
 </script>
