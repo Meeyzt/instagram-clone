@@ -15,15 +15,22 @@
 import Vue from 'vue';
 import Headbar from '@/components/Headbar.vue';
 import GridPost from '@/components/GridPost.vue';
+import { IPost } from '@/store/pages/profile/types';
 
 export default Vue.extend({
   components: {
     Headbar,
     GridPost,
   },
-  data() {
-    return {
-    };
+
+  created() {
+    this.$store.dispatch('getExplore', null, { root: true });
+  },
+
+  computed: {
+    explore(): Array<IPost> {
+      return this.$store.state.explore.explore;
+    },
   },
 });
 </script>
