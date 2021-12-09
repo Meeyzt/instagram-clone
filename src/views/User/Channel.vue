@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" :post="video" v-for="video in videos.data" :key="video.username"/>
+    <grid-post class="grid-item" :post="video" v-for="video in videos" :key="video.username"/>
   </div>
 </template>
 
@@ -8,15 +8,21 @@
 import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
+import { IVideos } from '@/store/pages/profile/types';
 
 export default Vue.extend({
   components: {
     GridPost,
   },
 
-  data() {
-    return {
-    };
+  created() {
+    this.$store.dispatch('getVideos', null, { root: true });
+  },
+
+  computed: {
+    videos(): Array<IVideos> {
+      return this.$store.state.profile.videos;
+    },
   },
 });
 </script>

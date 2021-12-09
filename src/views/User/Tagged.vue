@@ -36,7 +36,7 @@ export default Vue.extend({
     grid-template-columns: 1fr 1fr 1fr;
     gap: 28px;
 
-    .grid-items {
+    .grid-item {
       width: 300px;
       height: 300px;
     }

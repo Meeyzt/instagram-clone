@@ -21,7 +21,7 @@
         </div>
 
         <ul class="message-list">
-          <router-link active-class="active" tag="li" :to="`/direct/t/${message.username}`" v-for="message in messageData" :key="message.username" class="message">
+          <router-link active-class="active" tag="li" :to="`/direct/t/${message.username}`" v-for="message in inbox" :key="message.username" class="message">
             <div class="item">
               <div>
                 <user-picture class="picture" :src="message.pic" :size="56" />
@@ -211,16 +211,20 @@ export default Vue.extend({
   },
 
   props: {
-    messageData: {
+    inbox: {
       type: Array,
       required: true,
     },
   },
 
-  // methods: {
-  //   durationTime(date:string):string {
-  //     return dayjs().to(date);
-  //   },
-  // },
+  created() {
+    this.durationTime('2021-12-07T10:25:02');
+  },
+
+  methods: {
+    durationTime(date:string):string {
+      return dayjs().to(date);
+    },
+  },
 });
 </script>

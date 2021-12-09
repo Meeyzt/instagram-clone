@@ -1,5 +1,5 @@
 <template>
-    <messages-layout :messageData="Messages">
+    <messages-layout :messageData="[]">
       <router-view/>
   </messages-layout>
 </template>
@@ -13,9 +13,14 @@ export default Vue.extend({
     MessagesLayout,
   },
 
-  data() {
-    return {
-    };
+  created() {
+    // this.$store.dispatch('getUserInbox', null, { root: true });
+  },
+
+  computed: {
+    // inbox(): Array<IUserInbox> {
+    //   return this.$store.state.messages.userInbox;
+    // },
   },
 });
 </script>
