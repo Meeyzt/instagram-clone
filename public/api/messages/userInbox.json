@@ -1,33 +1,35 @@
 {
   "code": 200,
-  "data": [{
-    "pic": "https://i.pinimg.com/236x/4a/11/91/4a1191144a10a1e6beccfa44842584ca.jpg",
-    "lastMessage": "Gittin mi",
-    "releaseDate": "2021-12-07T10:25:02"
-  },
-  {
-    "username": "_meeyzt",
-    "pic": "https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png",
-    "lastMessage": "Neden tek tek yazıyosun",
-    "releaseDate": "2021-12-09T10:25:02"
-  },
-  {
-    "username": "tayfun",
-    "pic": "https://i.ytimg.com/vi/l8dvHzmBHgI/hqdefault.jpg",
-    "lastMessage": "Çok güzel",
-    "releaseDate": "2021-11-30T09:25:02"
-  },
-  {
-    "username": "mehmethakkioglu",
-    "pic": "https://i.pinimg.com/736x/c5/f9/a1/c5f9a1d44c2521abb99a47dba627e8a0.jpg",
-    "lastMessage": "Bir mesaj gönderdin",
-    "releaseDate": "2021-11-29T17:25:02"
-  },
-  {
-    "username": "sexijojukberat",
-    "pic": "https://fastly.4sqi.net/img/user/130x130/457421368_1VYEbuOp_qB-RQdgGX8_keysrA3014GQ5-VTNCDCu7Ks-KLOMuGjUR-Gv8Chj1ME2TekLK5Z1.jpg",
-    "lastMessage": "Doğum günün kutlu olsun",
-    "releaseDate": "2021-09-11T17:25:02"
-  }
-]
+  "data": [
+    {
+      "username": "osmnbrk",
+      "pic": "https://i.pinimg.com/236x/4a/11/91/4a1191144a10a1e6beccfa44842584ca.jpg",
+      "lastMessage": "Gittin mi",
+      "releaseDate": "2021-12-07T10:25:02"
+    },
+    {
+      "username": "_meeyzt",
+      "pic": "https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png",
+      "lastMessage": "Neden tek tek yazıyosun",
+      "releaseDate": "2021-12-09T10:25:02"
+    },
+    {
+      "username": "tayfun",
+      "pic": "https://i.ytimg.com/vi/l8dvHzmBHgI/hqdefault.jpg",
+      "lastMessage": "Çok güzel",
+      "releaseDate": "2021-11-30T09:25:02"
+    },
+    {
+      "username": "mehmethakkioglu",
+      "pic": "https://i.pinimg.com/736x/c5/f9/a1/c5f9a1d44c2521abb99a47dba627e8a0.jpg",
+      "lastMessage": "Bir mesaj gönderdin",
+      "releaseDate": "2021-11-29T17:25:02"
+    },
+    {
+      "username": "sexijojukberat",
+      "pic": "https://fastly.4sqi.net/img/user/130x130/457421368_1VYEbuOp_qB-RQdgGX8_keysrA3014GQ5-VTNCDCu7Ks-KLOMuGjUR-Gv8Chj1ME2TekLK5Z1.jpg",
+      "lastMessage": "Doğum günün kutlu olsun",
+      "releaseDate": "2021-09-11T17:25:02"
+    }
+  ]
 }
