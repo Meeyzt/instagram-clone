@@ -1,0 +1,17 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "url": "https://picsum.photos/200/210"
+    },
+    {
+      "url": "https://picsum.photos/200/220"
+    },
+    {
+      "url": "https://picsum.photos/200/230"
+    },
+    {
+      "url": "https://picsum.photos/200/240"
+    }
+  ]
+}

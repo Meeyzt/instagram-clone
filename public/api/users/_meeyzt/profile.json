@@ -1,0 +1,14 @@
+{
+  "code": 200,
+  "data": {
+    "username": "_meeyzt",
+    "name": "Mehmet",
+    "pic": "https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png",
+    "postsCount": 5,
+    "followers": 239,
+    "following": 130,
+    "detail": "Senin İçin Öneriliyor",
+    "request": true,
+    "biography": "Bursa <br/> Uludağ Üniversitesi"
+  }
+}
