@@ -1,11 +1,14 @@
 import { MutationTree } from 'vuex';
-import { IExplore, IPost } from './types';
+import { IInbox, IMessages, IUserInbox } from './types';
 
-export const mutations: MutationTree<IExplore> = {
-  setExplore(state, payload: Array<IPost>) {
-    state.explore = payload;
+export const mutations: MutationTree<IMessages> = {
+  setUserInbox(state, payload: Array<IUserInbox>) {
+    state.userInbox = payload;
   },
 
+  setInbox(state, payload: Array<IInbox>) {
+    state.inbox = payload;
+  },
 };
 
 export default mutations;
