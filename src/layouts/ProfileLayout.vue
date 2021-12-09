@@ -266,6 +266,7 @@ export default Vue.extend({
         overflow: auto;
         gap:20px;
         margin-bottom: 44px;
+        justify-content: center;
 
         .story {
           padding: 10px 15px;
