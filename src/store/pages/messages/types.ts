@@ -1,9 +1,17 @@
-export interface IPost {
-  url: string;
-  likeCount: number;
-  commentCount: number;
+export interface IUserInbox {
+  username: string;
+  pic: string;
+  lastMessage: string;
+  releaseDate: string;
 }
 
-export interface IExplore {
-  explore: Array<IPost>;
+export interface IInbox {
+  id: string;
+  message: string;
+  isMe: boolean;
+}
+
+export interface IMessages {
+  userInbox: Array<IUserInbox>;
+  inbox: Array<IInbox>
 }

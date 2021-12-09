@@ -1,15 +1,16 @@
 import { Module } from 'vuex';
 
 import { RootState } from '@/store/types';
-import { IExplore } from './types';
+import { IMessages } from './types';
 import { mutations } from './mutations';
 import { actions } from './actions';
 
-const state: IExplore = {
-  explore: [],
+const state: IMessages = {
+  userInbox: [],
+  inbox: [],
 };
 
-export const messages: Module<IExplore, RootState> = {
+export const messages: Module<IMessages, RootState> = {
   state,
   mutations,
   actions,
