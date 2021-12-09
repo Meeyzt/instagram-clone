@@ -9,10 +9,10 @@ const state: IExplore = {
   explore: [],
 };
 
-export const home: Module<IExplore, RootState> = {
+export const messages: Module<IExplore, RootState> = {
   state,
   mutations,
   actions,
 };
 
-export default home;
+export default messages;

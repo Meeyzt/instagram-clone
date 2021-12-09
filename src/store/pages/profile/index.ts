@@ -27,10 +27,10 @@ const state: IProfileState = {
   videos: [],
 };
 
-export const home: Module<IProfileState, RootState> = {
+export const profile: Module<IProfileState, RootState> = {
   state,
   mutations,
   actions,
 };
 
-export default home;
+export default profile;
