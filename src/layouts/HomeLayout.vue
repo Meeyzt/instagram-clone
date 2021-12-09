@@ -192,9 +192,6 @@ export default Vue.extend({
 
       .content {
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
 
         .stories {
           height: 116px;
