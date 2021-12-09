@@ -99,12 +99,15 @@
       </div>
 
       <slot/>
+
+      <Footer/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+
 import Headbar from '@/components/Headbar.vue';
 import UserPicture from '@/components/UserPicture.vue';
 import Button from '@/components/Button.vue';
@@ -115,6 +118,7 @@ import GridIcon from '@/components/icons/GridIcon.vue';
 import VideosIcon from '@/components/icons/VideosIcon.vue';
 import CollectionIcon from '@/components/icons/CollectionIcon.vue';
 import TagIcon from '@/components/icons/TagIcon.vue';
+import Footer from '@/components/Footer.vue';
 
 export default Vue.extend({
   components: {
@@ -128,6 +132,7 @@ export default Vue.extend({
     VideosIcon,
     CollectionIcon,
     TagIcon,
+    Footer,
   },
 
   data() {
