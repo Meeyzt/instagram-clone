@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" v-for="index in 2" :key="index"/>
+    <grid-post class="grid-item" :post="video" v-for="video in videos.data" :key="video.username"/>
   </div>
 </template>
 
@@ -9,9 +9,17 @@ import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
 
+import videos from '../../../public/api/users/_meeyzt/videos.json';
+
 export default Vue.extend({
   components: {
     GridPost,
+  },
+
+  data() {
+    return {
+      videos,
+    };
   },
 });
 </script>

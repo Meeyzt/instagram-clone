@@ -19,12 +19,12 @@
     </div>
 
     <div class="content">
-      <div :class="message.isMe ? 'message-box-by-me' : 'message-box-by-opposite'" v-for="message in messages" :key="message.id">
+      <div :class="message.isMe ? 'message-box-by-me' : 'message-box-by-opposite'" v-for="message in messages[0].message" :key="message.id">
         <user-picture src="https://picsum.photos/200/200" :size="24"  v-if="!message.isMe"/>
 
         <message
           :isMe="message.isMe"
-          :text="message.text"
+          :text="message.message"
         />
       </div>
     </div>
@@ -49,10 +49,9 @@
       </div>
 
       <div class="send-heart">
-          <icon-base :width="24" :height="24">
-            <like-icon />
-          </icon-base>
-          asdasda
+        <icon-base :width="24" :height="24">
+          <like-icon />
+        </icon-base>
       </div>
 
       </div>
@@ -72,6 +71,8 @@ import LikeIcon from '@/components/icons/LikeIcon.vue';
 import GalleryIcon from '@/components/icons/GalleryIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 
+import messages from '../../../public/Messages.json';
+
 export default Vue.extend({
   components: {
     Message,
@@ -85,47 +86,7 @@ export default Vue.extend({
 
   data() {
     return {
-      messages: [
-        {
-          id: 0, text: 'asd', isMe: true,
-        },
-        {
-          id: 1, text: 'asd', isMe: false,
-        },
-        {
-          id: 2, text: 'asd', isMe: true,
-        },
-        {
-          id: 3, text: 'asd', isMe: true,
-        },
-        {
-          id: 4, text: 'asd', isMe: true,
-        },
-        {
-          id: 5, text: 'asd', isMe: true,
-        },
-        {
-          id: 6, text: 'asd', isMe: false,
-        },
-        {
-          id: 7, text: 'asd', isMe: true,
-        },
-        {
-          id: 8, text: 'asd', isMe: true,
-        },
-        {
-          id: 9, text: 'asd', isMe: true,
-        },
-        {
-          id: 10, text: 'asd', isMe: false,
-        },
-        {
-          id: 11, text: 'asd', isMe: true,
-        },
-        {
-          id: 12, text: 'asd', isMe: true,
-        },
-      ],
+      messages,
     };
   },
 });

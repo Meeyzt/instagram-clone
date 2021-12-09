@@ -3,11 +3,11 @@
     <div class="post-titlebar">
       <div class="post-title">
         <router-link to="/thefunmarvel" class="post-profile-image">
-          <user-picture :size="32" src="https://picsum.photos/150/150" />
+          <user-picture :size="32" :src="data.owner.picture" />
         </router-link>
 
         <router-link class="link" to="/thefunmarvel">
-          <span>thefunmarvel</span>
+          <span>{{data.owner.username}}</span>
         </router-link>
         </div>
 
@@ -19,7 +19,7 @@
     </div>
 
     <div class="post-image">
-      <img src="https://picsum.photos/450/300" alt="asd">
+      <img :src="data.pictures[0].src" alt="asd">
     </div>
 
     <div class="post-description">
@@ -56,15 +56,15 @@
       </div>
 
       <div class="post-description-text">
-        <span>12.345 beğenme</span>
+        <span>{{data.likes.length}}beğenme</span>
       </div>
 
       <div class="post-description-subText">
-        <router-link to="/thefunmarvel" class="username">thefunmarvel</router-link> <span class="description"> Spiderman yeni fragman</span>
+        <router-link to="/thefunmarvel" class="username">{{data.owner.username}}</router-link> <span class="description"> {{data.description}}</span>
       </div>
 
       <div class="post-description-comments">
-        <span>999 yorumun tümünü gör</span>
+        <span>{{data.comments.length}} yorumun tümünü gör</span>
       </div>
     </div>
 
@@ -107,6 +107,13 @@ export default Vue.extend({
     ShareIcon,
     CollectionIcon,
     EmojiIcon,
+  },
+
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
   },
 });
 </script>
@@ -161,6 +168,8 @@ export default Vue.extend({
   .post-image {
     box-sizing: border-box;
     width: 100%;
+    display: flex;
+    overflow: hidden;
 
     img{
       width: 100%;

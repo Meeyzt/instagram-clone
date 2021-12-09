@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" v-for="index in 12" :key="index"/>
+    <grid-post class="grid-item" :post="tagged" v-for="tagged in taggeds.data" :key="tagged.username"/>
   </div>
 </template>
 
@@ -9,9 +9,17 @@ import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
 
+import taggeds from '../../../public/api/users/_meeyzt/tagged.json';
+
 export default Vue.extend({
   components: {
     GridPost,
+  },
+
+  data() {
+    return {
+      taggeds,
+    };
   },
 });
 </script>
@@ -24,5 +32,10 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 28px;
+
+    .grid-items {
+      width: 300px;
+      height: 300px;
+    }
   }
 </style>
