@@ -7,7 +7,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import MessagesLayout from '@/layouts/MessagesLayout.vue';
-import Messages from '../../../public/Messages.json';
 
 export default Vue.extend({
   components: {
@@ -16,7 +15,6 @@ export default Vue.extend({
 
   data() {
     return {
-      Messages,
     };
   },
 });

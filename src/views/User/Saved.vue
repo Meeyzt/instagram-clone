@@ -9,8 +9,6 @@ import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
 
-import saveds from '../../../public/api/users/_meeyzt/saveds.json';
-
 export default Vue.extend({
   components: {
     GridPost,
@@ -18,7 +16,6 @@ export default Vue.extend({
 
   data() {
     return {
-      saveds,
     };
   },
 });

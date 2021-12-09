@@ -9,9 +9,6 @@ import Vue from 'vue';
 
 import HomeLayout from '@/layouts/HomeLayout.vue';
 import Post from '@/components/Post.vue';
-import stories from '../../public/api/stories.json';
-import users from '../../public/api/recommended-users.json';
-import posts from '../../public/api/timeline-posts.json';
 
 export default Vue.extend({
   name: 'Home',
@@ -22,9 +19,6 @@ export default Vue.extend({
 
   data() {
     return {
-      stories,
-      users,
-      posts,
     };
   },
 });

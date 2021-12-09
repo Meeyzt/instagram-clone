@@ -1,5 +1,5 @@
 <template>
-<profile-layout :profile="usersProfile[0]">
+<profile-layout :profile="{}">
   <router-view/>
 </profile-layout>
 </template>
@@ -8,8 +8,6 @@
 import Vue from 'vue';
 import ProfileLayout from '@/layouts/ProfileLayout.vue';
 
-import usersProfile from '../../../public/users.json';
-
 export default Vue.extend({
   components: {
     ProfileLayout,
@@ -17,7 +15,6 @@ export default Vue.extend({
 
   data() {
     return {
-      usersProfile,
     };
   },
 });
