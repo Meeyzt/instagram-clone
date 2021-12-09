@@ -5,19 +5,23 @@ import { RootState } from '@/store/types';
 import { IHomeState } from './types';
 
 export const actions: ActionTree<IHomeState, RootState> = {
-  posts({ commit }): void {
-    axios.get('//localhost:8080/api/posts.json').then((data) => {
-      commit('setPosts', data.data.posts);
+  getTimelinePosts({ commit }): void {
+    axios.get('//localhost:8080/api/timeline-posts.json').then((data) => {
+      commit('setTimelinePosts', data.data.data);
     });
   },
 
-  userProfiles({ commit }): void {
-    axios.get('//localhost:8080/api/usersProfile.json').then((data) => {
-      commit('setPosts', data.data.posts);
+  getStories({ commit }): void {
+    axios.get('//localhost:8080/api/stories.json').then((data) => {
+      commit('setStories', data.data.data);
+    });
+  },
+
+  getRecommendedUsers({ commit }): void {
+    axios.get('//localhost:8080/api/recommended-users.json').then((data) => {
+      commit('setRecommendedUsers', data.data.data);
     });
   },
 };
 
-export default {
-  actions,
-};
+export default actions;

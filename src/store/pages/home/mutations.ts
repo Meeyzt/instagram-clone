@@ -1,12 +1,18 @@
 import { MutationTree } from 'vuex';
-import { IHomeState, IProfile } from './types';
+import { IHomeState, IRecommendedUsers, IStories, ITimelinePosts } from './types';
 
-// eslint-disable-next-line import/prefer-default-export
 export const mutations: MutationTree<IHomeState> = {
-  setPosts(state, payload: Array<JSON>) {
-    state.posts = payload;
+  setTimelinePosts(state, payload: Array<ITimelinePosts>) {
+    state.timelinePosts = payload;
   },
-  setProfiles(state, payload: Array<IProfile>) {
-    state.profiles = payload;
+
+  setStories(state, payload: Array<IStories>) {
+    state.stories = payload;
+  },
+
+  setRecommendedUsers(state, payload: Array<IRecommendedUsers>) {
+    state.recommendedUsers = payload;
   },
 };
+
+export default mutations;

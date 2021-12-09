@@ -32,7 +32,6 @@ export const actions: ActionTree<IProfileState, RootState> = {
   getTagged({ commit }): void {
     axios.get('//localhost:8080/api/users/_meeyzt/tagged.json').then((data) => {
       commit('setTagged', data.data.data);
-      console.log(data.data.data);
     });
   },
 

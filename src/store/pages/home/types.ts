@@ -37,6 +37,21 @@ export interface ITimelinePosts {
   releaseDate: string;
 }
 
+export interface IStories {
+  url: string;
+  username: string;
+}
+
+export interface IRecommendedUsers {
+  username: string;
+  pic: string;
+  request: boolean;
+  details: string;
+
+}
+
 export interface IHomeState {
   timelinePosts: Array<ITimelinePosts>;
+  stories: Array<IStories>;
+  recommendedUsers: Array<IRecommendedUsers>;
 }
