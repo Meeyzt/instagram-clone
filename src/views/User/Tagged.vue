@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" :post="tagged" v-for="tagged in taggeds.data" :key="tagged.username"/>
+    <grid-post class="grid-item" :post="tag" v-for="tag in tagged" :key="tag.username"/>
   </div>
 </template>
 
@@ -8,18 +8,21 @@
 import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
-
-import taggeds from '../../../public/api/users/_meeyzt/tagged.json';
+import { ITagged } from '@/store/pages/profile/types';
 
 export default Vue.extend({
   components: {
     GridPost,
   },
 
-  data() {
-    return {
-      taggeds,
-    };
+  created() {
+    this.$store.dispatch('getTagged', null, { root: true });
+  },
+
+  computed: {
+    tagged(): Array<ITagged> {
+      return this.$store.state.profile.tagged;
+    },
   },
 });
 </script>

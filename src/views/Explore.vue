@@ -16,8 +16,6 @@ import Vue from 'vue';
 import Headbar from '@/components/Headbar.vue';
 import GridPost from '@/components/GridPost.vue';
 
-import explore from '../../public/api/explore.json';
-
 export default Vue.extend({
   components: {
     Headbar,
@@ -25,7 +23,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      explore,
     };
   },
 });

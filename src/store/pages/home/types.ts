@@ -1,38 +1,42 @@
-export interface IStory {
-  url: string;
-  text: string;
-}
-
-export interface IPost {
-  url: string;
-}
-
-export interface IVideo {
-  url: string;
-}
-
-export interface ISaved {
-  url: string;
-}
-
-export interface ITagged {
-  url: string;
-}
-
-export interface IProfile {
+export interface IOwner {
   username: string;
-  pic: string;
-  postsCount: number;
-  followers: number;
-  following: number;
-  biography: string;
-  stories: Array<IStory>;
-  posts: Array<IPost>;
-  saveds: Array<ISaved>;
-  tagged: Array<ITagged>;
+  picture: string;
+}
+
+export interface IPictures {
+  src: string;
+}
+
+export interface IUsers {
+  username: string;
+  comments: string;
+  releaseDate: string;
+}
+
+export interface IComments {
+  users: Array<IUsers>;
+  length: number;
+}
+
+export interface ILikesUsers {
+  users: string;
+}
+
+export interface ILikes {
+  users: Array<ILikesUsers>;
+  length: number;
+}
+
+export interface ITimelinePosts {
+  id: number;
+  owner: IOwner;
+  description: string;
+  pictures: Array<IPictures>;
+  comments: IComments;
+  likes: ILikes;
+  releaseDate: string;
 }
 
 export interface IHomeState {
-  posts: Array<JSON>;
-  profiles: Array<IProfile>;
+  timelinePosts: Array<ITimelinePosts>;
 }

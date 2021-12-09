@@ -71,8 +71,6 @@ import LikeIcon from '@/components/icons/LikeIcon.vue';
 import GalleryIcon from '@/components/icons/GalleryIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 
-import messages from '../../../public/Messages.json';
-
 export default Vue.extend({
   components: {
     Message,
@@ -86,7 +84,6 @@ export default Vue.extend({
 
   data() {
     return {
-      messages,
     };
   },
 });

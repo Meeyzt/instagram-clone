@@ -217,10 +217,10 @@ export default Vue.extend({
     },
   },
 
-  methods: {
-    durationTime(date:string):string {
-      return dayjs().to(date);
-    },
-  },
+  // methods: {
+  //   durationTime(date:string):string {
+  //     return dayjs().to(date);
+  //   },
+  // },
 });
 </script>
