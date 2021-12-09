@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" v-for="index in 5" :key="index"/>
+    <grid-post class="grid-item" :post="post" v-for="post in posts.data" :key="post.username"/>
   </div>
 </template>
 
@@ -9,9 +9,17 @@ import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
 
+import posts from '../../../public/api/users/_meeyzt/posts.json';
+
 export default Vue.extend({
   components: {
     GridPost,
+  },
+
+  data() {
+    return {
+      posts,
+    };
   },
 });
 </script>

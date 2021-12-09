@@ -9,6 +9,11 @@
     "following": 130,
     "detail": "Senin İçin Öneriliyor",
     "request": true,
-    "biography": "Bursa <br/> Uludağ Üniversitesi"
+    "biography": "Bursa <br/> Uludağ Üniversitesi",
+    "website": null,
+    "email":"mehmetyilmaz@ron.digital",
+    "phoneNumber": "+905312346789",
+    "sex": "Erkek",
+    "exploreAccount": false
   }
 }

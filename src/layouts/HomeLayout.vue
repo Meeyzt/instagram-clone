@@ -5,9 +5,9 @@
   <div class="main">
     <div class="content">
       <div class="stories">
-        <div class="story" v-for="index in 10" :key="index">
-          <user-picture src="https://picsum.photos/450/300" :size="60" type="story-circle" />
-          Ahmet
+        <div class="story" v-for="story in stories" :key="story.username">
+          <user-picture :src="story.url" :size="60" type="story-circle" />
+          {{story.username}}
         </div>
       </div>
       <div class="posts">
@@ -20,12 +20,12 @@
       <div class="header">
         <user-picture
           type="watched-story"
-          src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
+          :src="recommendedUsers[0].pic"
           :size="56"
         />
         <div class="title">
-          <div class="username">_meeyzt</div>
-          <div class="name">Mehmet</div>
+          <div class="username">{{recommendedUsers[0].username}}</div>
+          <div class="name">{{recommendedUsers[0].name}}</div>
         </div>
 
         <div>
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <div class="suggested-acc" v-for="(user, index) in userInfo" :key="index+99">
+      <div class="suggested-acc" v-for="user in recommendedUsers" :key="user.username">
         <div class="user">
           <user-picture :src="user.pic" :size="32"/>
 
@@ -96,6 +96,17 @@ export default Vue.extend({
     UserPicture,
     Button,
     Headbar,
+  },
+
+  props: {
+    stories: {
+      type: Array,
+      required: true,
+    },
+    recommendedUsers: {
+      type: Array,
+      required: true,
+    },
   },
 
   data() {

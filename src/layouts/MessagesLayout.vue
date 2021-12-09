@@ -21,7 +21,7 @@
         </div>
 
         <ul class="message-list">
-          <router-link tag="li" :to="`/direct/t/${message.username}`" v-for="message in messageData" :key="message.username" class="message">
+          <router-link active-class="active" tag="li" :to="`/direct/t/${message.username}`" v-for="message in messageData" :key="message.username" class="message">
             <div class="item">
               <div>
                 <user-picture class="picture" :src="message.pic" :size="56" />
@@ -29,9 +29,9 @@
               <div class="text">
                 <div>{{message.username}}</div>
                 <div class="sub-text text-gray">
-                  <div class="message-text">{{message.message}}</div>
+                  <div class="message-text">{{message.lastMessage}}</div>
                   <span>·</span>
-                  <span>{{message.duration}}</span>
+                  <span class="duration">{{durationTime(message.releaseDate)}}</span>
                 </div>
               </div>
             </div>
@@ -135,11 +135,14 @@
         width: 100%;
         font-size: 14px;
 
+        .active {
+            background: rgba(0, 0, 0, 0.05);
+          }
         .message {
           cursor: pointer;
 
           &:hover {
-            background: rgba(0, 0, 0, 0.01);
+            background: rgba(0, 0, 0, 0.05);
           }
 
           .item {
@@ -161,6 +164,10 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
+
+              .duration {
+                white-space: nowrap;
+              }
             }
           }
 
@@ -179,11 +186,20 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import dayjs from 'dayjs';
+
 import IconBase from '@/components/IconBase.vue';
 import NewMessageIcon from '@/components/icons/NewMessageIcon.vue';
 import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import UserPicture from '@/components/UserPicture.vue';
 import Headbar from '@/components/Headbar.vue';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const relativeTime = require('dayjs/plugin/relativeTime');
+require('dayjs/locale/tr');
+
+dayjs.extend(relativeTime);
+dayjs.locale('tr');
 
 export default Vue.extend({
   components: {
@@ -194,39 +210,17 @@ export default Vue.extend({
     Headbar,
   },
 
-  data() {
-    return {
-      messageData: [{
-        username: '_meeyzt',
-        pic: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png',
-        message: 'Sana bir hikaye gönderdi',
-        duration: '2d',
-      },
-      {
-        username: 'osmnbrk',
-        pic: 'https://i.pinimg.com/236x/4a/11/91/4a1191144a10a1e6beccfa44842584ca.jpg',
-        message: 'Hikayesinde senden bahsetti',
-        duration: '30d',
-      },
-      {
-        username: 'tayfun',
-        pic: 'https://i.ytimg.com/vi/l8dvHzmBHgI/hqdefault.jpg',
-        message: 'Bir mesaj gönderdi',
-        duration: '2g',
-      },
-      {
-        username: 'mehmethakkioglu',
-        pic: 'https://i.pinimg.com/736x/c5/f9/a1/c5f9a1d44c2521abb99a47dba627e8a0.jpg',
-        message: 'Bir mesaj gönderdin',
-        duration: '24g',
-      },
-      {
-        username: 'sexijojukberat',
-        pic: 'https://fastly.4sqi.net/img/user/130x130/457421368_1VYEbuOp_qB-RQdgGX8_keysrA3014GQ5-VTNCDCu7Ks-KLOMuGjUR-Gv8Chj1ME2TekLK5Z1.jpg',
-        message: 'Selam',
-        duration: '1a',
-      }],
-    };
+  props: {
+    messageData: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  methods: {
+    durationTime(date:string):string {
+      return dayjs().to(date);
+    },
   },
 });
 </script>

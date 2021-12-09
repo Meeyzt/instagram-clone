@@ -2,34 +2,54 @@
   "code": 200,
   "data": [
     {
-      "url": "https://picsum.photos/200/300"
+      "url": "https://picsum.photos/200/300",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/310"
+      "url": "https://picsum.photos/200/310",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/320"
+      "url": "https://picsum.photos/200/320",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/330"
+      "url": "https://picsum.photos/200/330",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/340"
+      "url": "https://picsum.photos/200/340",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/350"
+      "url": "https://picsum.photos/200/350",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/360"
+      "url": "https://picsum.photos/200/360",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/370"
+      "url": "https://picsum.photos/200/370",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/380"
+      "url": "https://picsum.photos/200/380",
+      "likeCount": 123,
+      "commentCount": 32
     },
     {
-      "url": "https://picsum.photos/200/390"
+      "url": "https://picsum.photos/200/390",
+      "likeCount": 123,
+      "commentCount": 32
     }
   ]
 }
