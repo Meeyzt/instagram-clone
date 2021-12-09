@@ -6,4 +6,4 @@ export const mutations: MutationTree<HomeState> = {
   setHello(state, payload: string) {
     state.Hello = payload;
   },
-}
+};
