@@ -1,0 +1,40 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "id": "6b3516d5-6103",
+      "message": "Öldünmü",
+      "isMe": true
+    },
+    {
+      "id": "6b3516d5-6104",
+      "message": "yok",
+      "isMe": false
+    },
+    {
+      "id": "6b3516d5-6105",
+      "message": "Kaldınmı",
+      "isMe": true
+    },
+    {
+      "id": "6b3516d5-6106",
+      "message": "yok",
+      "isMe": false
+    },
+    {
+      "id": "6b3516d5-6107",
+      "message": "ölmedim",
+      "isMe": false
+    },
+    {
+      "id": "6b3516d5-6108",
+      "message": "heh iyi madem",
+      "isMe": true
+    },
+    {
+      "id": "6b3516d5-6109",
+      "message": "Gittin mi",
+      "isMe": false
+    }
+  ]
+}

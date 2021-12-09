@@ -16,16 +16,18 @@
     </div>
     <div class="empty"></div>
 
-    <div class="sidebar">
+    <div class="sidebar" v-if="recommendedUsers !== undefined">
       <div class="header">
+
         <user-picture
           type="watched-story"
-          :src="recommendedUsers[0].pic"
+          src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
           :size="56"
         />
+
         <div class="title">
-          <div class="username">{{recommendedUsers[0].username}}</div>
-          <div class="name">{{recommendedUsers[0].name}}</div>
+          <div class="username">_meeyzt</div>
+          <div class="name">Mehmet</div>
         </div>
 
         <div>

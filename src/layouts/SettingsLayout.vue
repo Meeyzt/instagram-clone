@@ -9,7 +9,7 @@
 
           <div class="sidebar-items" v-if="tabs">
             <router-link
-              active="active"
+              active-class="active"
               v-for="tab in tabs"
               :to="tab.url"
               :key="tab.key"
