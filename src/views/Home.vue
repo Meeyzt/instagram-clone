@@ -25,5 +25,8 @@ export default Vue.extend({
     HomeLayout,
     Post,
   },
+  created(): void {
+    console.log(this.$store.dispatch('posts'));
+  },
 });
 </script>
