@@ -62,17 +62,17 @@ export default Vue.extend({
           title: 'Yorumlar',
           buttons: [
             {
-              id: 0,
+              id: 12,
               isChecked: false,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 13,
               isChecked: false,
               title: 'Takip ettiğim kişiler',
             },
             {
-              id: 2,
+              id: 14,
               isChecked: true,
               title: 'Herkesten',
             },
@@ -84,12 +84,12 @@ export default Vue.extend({
           title: 'Yorum Beğenmeleri',
           buttons: [
             {
-              id: 0,
+              id: 33,
               isChecked: true,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 34,
               isChecked: false,
               title: 'Takip ettiğim kişiler',
             },
@@ -101,17 +101,17 @@ export default Vue.extend({
           title: 'Olduğun Fotoğraflardaki Beğenmeler ve Yorumlar',
           buttons: [
             {
-              id: 0,
+              id: 31,
               isChecked: false,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 32,
               isChecked: false,
               title: 'Takip ettiğim kişiler',
             },
             {
-              id: 2,
+              id: 33,
               isChecked: true,
               title: 'Herkesten',
             },
@@ -123,12 +123,12 @@ export default Vue.extend({
           title: 'Kabul Edilen Takip İstekleri',
           buttons: [
             {
-              id: 0,
+              id: 41,
               isChecked: false,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 42,
               isChecked: true,
               title: 'Herkesten',
             },
@@ -140,12 +140,12 @@ export default Vue.extend({
           title: 'Instagram Direct İstekleri',
           buttons: [
             {
-              id: 0,
+              id: 50,
               isChecked: false,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 51,
               isChecked: true,
               title: 'Herkesten',
             },
@@ -157,12 +157,12 @@ export default Vue.extend({
           title: 'Instagram Direct',
           buttons: [
             {
-              id: 0,
+              id: 60,
               isChecked: false,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 61,
               isChecked: true,
               title: 'Herkesten',
             },
@@ -170,16 +170,16 @@ export default Vue.extend({
           description: 'johnappleseed sana bir mesaj gönderdi.',
         },
         {
-          id: 0,
+          id: 10,
           title: 'Hatırlatmalar',
           buttons: [
             {
-              id: 0,
+              id: 70,
               isChecked: false,
               title: 'Kapalı',
             },
             {
-              id: 1,
+              id: 71,
               isChecked: true,
               title: 'Herkesten',
             },

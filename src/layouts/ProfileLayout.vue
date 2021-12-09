@@ -27,7 +27,7 @@
               </Button>
             </div>
 
-            <div class="settings">
+            <router-link to="/accounts/edit" class="settings">
               <icon-base
                 :width="24"
                 :height="24"
@@ -36,7 +36,7 @@
               >
                 <component :is="$route.params.id === '_meeyzt' ? 'settings-icon' : 'details-icon'"/>
               </icon-base>
-            </div>
+            </router-link>
           </div>
 
           <div class="user-details">
@@ -178,6 +178,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+  a {
+    color: black;
+
+    &:visited {
+      color:black;
+    }
+  }
   .container {
     width: 100%;
     height: 100%;

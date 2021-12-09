@@ -6,7 +6,7 @@ import { IMessages } from './types';
 
 export const actions: ActionTree<IMessages, RootState> = {
   getInbox({ commit }, id: string): void {
-    axios.get(`//localhost:8080/api/messages/ ${id} /inbox.json`).then((data) => {
+    axios.get(`//localhost:8080/api/messages/${id}/inbox.json`).then((data) => {
       commit('setInbox', data.data.data);
     });
   },

@@ -19,13 +19,14 @@
     </div>
 
     <div class="content">
-      <div :class="message.isMe ? 'message-box-by-me' : 'message-box-by-opposite'" v-for="message in messages[0].message" :key="message.id">
+      <div :class="message.isMe ? 'message-box-by-me' : 'message-box-by-opposite'" v-for="message in inbox" :key="message.id">
         <user-picture src="https://picsum.photos/200/200" :size="24"  v-if="!message.isMe"/>
 
         <message
           :isMe="message.isMe"
           :text="message.message"
         />
+
       </div>
     </div>
 
@@ -71,6 +72,8 @@ import LikeIcon from '@/components/icons/LikeIcon.vue';
 import GalleryIcon from '@/components/icons/GalleryIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 
+import { IInbox } from '@/store/pages/messages/types';
+
 export default Vue.extend({
   components: {
     Message,
@@ -82,9 +85,19 @@ export default Vue.extend({
     LikeIcon,
   },
 
-  data() {
-    return {
-    };
+  beforeRouteUpdate(to, from, next) {
+    this.$store.dispatch('getInbox', to.params.id, { root: true });
+    next();
+  },
+
+  created() {
+    this.$store.dispatch('getInbox', this.$route.params.id, { root: true });
+  },
+
+  computed: {
+    inbox(): Array<IInbox> {
+      return this.$store.state.messages.inbox;
+    },
   },
 });
 </script>

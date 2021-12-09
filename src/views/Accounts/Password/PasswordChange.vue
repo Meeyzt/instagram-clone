@@ -3,7 +3,7 @@
     <div class="change">
       <div class="profile">
         <div class="photo">
-          <user-picture src="https://picsum.photos/150/150" size="38" />
+          <user-picture src="https://picsum.photos/150/150" :size="38" />
         </div>
         <div class="username-area">
           <div class="text">name</div>
