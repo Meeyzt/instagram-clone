@@ -6,14 +6,14 @@ import { IMessages } from './types';
 
 export const actions: ActionTree<IMessages, RootState> = {
   getInbox({ commit }, id: string): void {
-    axios.get(`//localhost:8080/api/messages/${id}/inbox.json`).then((data) => {
-      commit('setInbox', data.data.data);
+    axios.get(`/api/messages/${id}/inbox.json`).then((response) => {
+      commit('setInbox', response.data.data);
     });
   },
 
   getUserInbox({ commit }): void {
-    axios.get('//localhost:8080/api/messages/userInbox.json').then((data) => {
-      commit('setUserInbox', data.data.data);
+    axios.get('/api/messages/userInbox.json').then((response) => {
+      commit('setUserInbox', response.data.data);
     });
   },
 };

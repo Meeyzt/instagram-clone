@@ -14,7 +14,6 @@
         <slot />
       </div>
     </div>
-    <div class="empty"></div>
 
     <div class="sidebar" v-if="recommendedUsers !== undefined">
       <div class="header">
@@ -151,11 +150,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
   @media screen and (min-width: 1000px){
     .main {
-      padding: 32px 5vw 0 4vw ;
+      padding: 32px 5vw 0 4vw;
 
-      .content {
-        width: 600px;
-      }
       .sidebar {
         display: block;
       }
@@ -166,13 +162,6 @@ export default Vue.extend({
     .main {
       padding: 32px 0 0 0;
 
-      .content {
-        width: 600px;
-      }
-
-      .empty {
-        display: none;
-      }
       .sidebar {
         display: none;
       }
@@ -194,6 +183,8 @@ export default Vue.extend({
 
       .content {
         height: 100%;
+        width: 100%;
+        max-width: 600px;
 
         .stories {
           height: 116px;
@@ -226,16 +217,12 @@ export default Vue.extend({
         }
       }
 
-      .empty {
-        min-width: 290px;
-        max-width: 290px;
-      }
-
       .sidebar {
         min-width: 290px;
         max-width: 290px;
-        right: 72px;
-        position: absolute;
+        padding-left: 32px;
+        position: sticky;
+        top: 0;
 
         .btn-bar {
           font-size: 12px;

@@ -6,20 +6,20 @@ import { IHomeState } from './types';
 
 export const actions: ActionTree<IHomeState, RootState> = {
   getTimelinePosts({ commit }): void {
-    axios.get('//localhost:8080/api/timeline-posts.json').then((data) => {
-      commit('setTimelinePosts', data.data);
+    axios.get('/api/timeline-posts.json').then((response) => {
+      commit('setTimelinePosts', response.data);
     });
   },
 
   getStories({ commit }): void {
-    axios.get('//localhost:8080/api/stories.json').then((data) => {
-      commit('setStories', data.data);
+    axios.get('/api/stories.json').then((response) => {
+      commit('setStories', response.data);
     });
   },
 
   getRecommendedUsers({ commit }): void {
-    axios.get('//localhost:8080/api/recommended-users.json').then((data) => {
-      commit('setRecommendedUsers', data.data);
+    axios.get('/api/recommended-users.json').then((response) => {
+      commit('setRecommendedUsers', response.data);
     });
   },
 };

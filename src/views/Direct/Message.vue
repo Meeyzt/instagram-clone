@@ -56,7 +56,6 @@
       </div>
 
       </div>
-
     </div>
   </div>
 </template>
@@ -71,7 +70,6 @@ import InfoIcon from '@/components/icons/InfoIcon.vue';
 import LikeIcon from '@/components/icons/LikeIcon.vue';
 import GalleryIcon from '@/components/icons/GalleryIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
-
 import { IInbox } from '@/store/pages/messages/types';
 
 export default Vue.extend({
@@ -84,7 +82,7 @@ export default Vue.extend({
     GalleryIcon,
     LikeIcon,
   },
-
+  
   beforeRouteUpdate(to, from, next) {
     this.$store.dispatch('getInbox', to.params.id, { root: true });
     next();
@@ -98,6 +96,7 @@ export default Vue.extend({
     inbox(): Array<IInbox> {
       return this.$store.state.messages.inbox;
     },
+
   },
 });
 </script>

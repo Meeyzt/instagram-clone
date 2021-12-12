@@ -1,6 +1,6 @@
 <template>
   <div :style="{ width: size+'px', height: size+'px'}" :class="frameStatus">
-    <img :src="src" alt="sad">
+    <img :src="src" alt="sad"/>
   </div>
 </template>
 
@@ -45,29 +45,23 @@ export default Vue.extend({
   }
 
   .story-circle {
-    display: flex;
-    align-items: center;
     border-radius: 9999px;
     padding: 2px;
-    justify-content: center;
     background: linear-gradient(to right, red, orange, purple);
 
     img {
       width: 100%;
       height: 100%;
       border-radius: 9999px;
+      background: white;
     }
     }
 
     .watched-story-circle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 0 2px white, 0 0 0 3px rgba($color: #000000, $alpha: 0.3);
       border-radius: 999999px;
 
       img {
-        border: 2px solid white;
         border-radius: 9999px;
         width: 100%;
         height: 100%;
@@ -75,9 +69,6 @@ export default Vue.extend({
     }
 
     .normal {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border-radius: 999999px;
 
       img {

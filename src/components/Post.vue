@@ -2,16 +2,16 @@
   <div class="post-container">
     <div class="post-titlebar">
       <div class="post-title">
-        <router-link to="/thefunmarvel" class="post-profile-image">
+        <router-link :to="`/${data.owner.username}`" class="post-profile-image">
           <user-picture :size="32" :src="data.owner.picture" />
         </router-link>
 
-        <router-link class="link" to="/thefunmarvel">
-          <span>{{data.owner.username}}</span>
+        <router-link class="link" :to="`/${data.owner.username}`">
+          <span class="username">{{data.owner.username}}</span>
         </router-link>
         </div>
 
-        <div>
+        <div class="button" @click="toggleDetailModal">
           <icon-base :width="32" :height="32" :viewBoxSize="24" :viewBoySize="24">
             <details-icon/>
         </icon-base>
@@ -26,41 +26,41 @@
       <div class="post-description-buttons">
         <div class="post-description-buttons-left">
 
-          <button>
+          <div class="button">
             <icon-base :width="24" :height="24">
               <like-icon/>
             </icon-base>
-          </button>
+          </div>
 
-          <button>
+          <div class="button" @click="toggleShowWidePost">
             <icon-base :width="24" :height="24">
               <comment-icon/>
             </icon-base>
-          </button>
+          </div>
 
-          <button>
+          <div class="button">
             <icon-base :width="24" :height="24">
               <share-icon/>
             </icon-base>
-          </button>
+          </div>
 
         </div>
 
         <div class="post-description-buttons-right">
-          <button>
+          <div class="button">
             <icon-base :width="24" :height="24">
               <collection-icon/>
             </icon-base>
-          </button>
+          </div>
         </div>
       </div>
 
       <div class="post-description-text">
-        <span>{{data.likes.length}}beğenme</span>
+        <span>{{data.likes.length}} beğenme</span>
       </div>
 
       <div class="post-description-subText">
-        <router-link to="/thefunmarvel" class="username">{{data.owner.username}}</router-link> <span class="description"> {{data.description}}</span>
+        <router-link :to="`/${data.owner.username}`" class="username">{{data.owner.username}}</router-link> <span class="description"> {{data.description}}</span>
       </div>
 
       <div class="post-description-comments">
@@ -82,6 +82,14 @@
         </button>
       </div>
     </div>
+
+    <modal @close="showDetailModal = false" v-if="showDetailModal">
+      <post-info/>
+    </modal>
+
+    <modal @close="showWidePost = false" v-if="showWidePost">
+      <wide-post/>
+    </modal>
   </div>
 </template>
 
@@ -96,6 +104,9 @@ import CommentIcon from '@/components/icons/CommentIcon.vue';
 import ShareIcon from '@/components/icons/ShareIcon.vue';
 import CollectionIcon from '@/components/icons/CollectionIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
+import Modal from '@/components/Modal.vue';
+import PostInfo from '@/components/PostInfo.vue';
+import WidePost from '@/components/WidePost.vue';
 
 export default Vue.extend({
   components: {
@@ -107,6 +118,33 @@ export default Vue.extend({
     ShareIcon,
     CollectionIcon,
     EmojiIcon,
+    Modal,
+    PostInfo,
+    WidePost,
+  },
+
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    toggleDetailModal() {
+      this.showDetailModal = true;
+    },
+
+    toggleShowWidePost() {
+      this.showWidePost = true;
+    },
+  },
+
+  data() {
+    return {
+      showDetailModal: false,
+      showWidePost: false,
+    };
   },
 
   props: {
@@ -119,10 +157,20 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/variables.scss';
+
   .post-container {
     width: 100%;
     background: white;
     border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .button{
+    cursor: pointer;
+
+    &:hover {
+      color: $instagram-gray;
+    }
   }
 
   .post-titlebar {
@@ -133,6 +181,7 @@ export default Vue.extend({
     align-items: center;
     padding-right: 16px;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    width: 100%;
 
     .post-title {
       box-sizing: border-box;
@@ -142,10 +191,15 @@ export default Vue.extend({
       flex-direction: row;
       align-items: center;
       gap: 10px;
+      width: 100%;
 
       .link {
         text-decoration: none;
         color: black;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .post-profile-image {
@@ -186,7 +240,7 @@ export default Vue.extend({
     button {
     border: none;
     background: transparent;
-    cursor:pointer;
+    cursor: pointer;
     color: black;
 
     :hover {
@@ -227,6 +281,7 @@ export default Vue.extend({
         font-weight: 600;
         cursor: pointer;
         color: rgba(0, 0, 0, 0.9);
+        text-decoration: none;
 
         &:hover {
           text-decoration: underline;

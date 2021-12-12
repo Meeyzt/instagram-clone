@@ -112,10 +112,6 @@ export default Vue.extend({
     this.$store.dispatch('getProfile', null, { root: true });
   },
 
-  updated() {
-    console.log(this.profile);
-  },
-
   computed: {
     profile(): Array<IProfile> {
       return this.$store.state.profile.profile;
