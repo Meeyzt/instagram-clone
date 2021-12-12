@@ -91,6 +91,7 @@ import UserPicture from '@/components/UserPicture.vue';
 import Button from '@/components/Button.vue';
 import SettingsEdit from '@/components/SettingsEdit.vue';
 import SettingsLayout from '@/layouts/SettingsLayout.vue';
+import { IProfile } from '@/store/pages/profile/types';
 
 export default Vue.extend({
   components: {
@@ -98,6 +99,16 @@ export default Vue.extend({
     Button,
     SettingsEdit,
     SettingsLayout,
+  },
+
+  created() {
+    this.$store.dispatch('getProfile', null, { root: true });
+  },
+
+  computed: {
+    profile(): Array<IProfile> {
+      return this.$store.state.profile.profile;
+    },
   },
 });
 </script>

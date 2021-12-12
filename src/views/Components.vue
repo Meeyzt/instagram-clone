@@ -251,6 +251,7 @@
       <Footer />
     </div>
 
+<!-- SettingsEdit -->
     <div class="component">
       <h1>SettingsEdit</h1>
 
@@ -262,8 +263,10 @@
       :description="'Açıklama'"
       :linkUrl="'/'"
       :linkText="'Link Yazısı'"/>
+
     </div>
 
+<!-- PasswordReset -->
     <div class="component">
       <h1>PasswordReset</h1>
 
@@ -273,6 +276,7 @@
       />
     </div>
 
+<!-- SettingCheckbox -->
     <div class="component">
       <h1>SettingCheckbox</h1>
 
@@ -283,24 +287,34 @@
       />
     </div>
 
+<!-- RadioButton -->
     <div class="component">
-      <h1>SettingCheckbox</h1>
+      <h1>RadioButton</h1>
 
       <radio-button
         :isChecked="true"
         :title="'Deneme'"
         :name="'deneme1'"
       />
+
       <radio-button
         :isChecked="true"
         :title="'Deneme'"
         :name="'deneme1'"
       />
     </div>
+
+    <!-- Modal -->
+    <div class="component">
+      <h1>Post Info</h1>
+
+      <post-info/>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
+/* eslint-disable vue/no-unused-components */
 import Vue from 'vue';
 
 import Input from '@/components/Input.vue';
@@ -317,6 +331,8 @@ import PasswordReset from '@/components/PasswordReset.vue';
 import MessagesLayout from '@/layouts/MessagesLayout.vue';
 import SettingCheckbox from '@/components/SettingCheckbox.vue';
 import RadioButton from '@/components/RadioButton.vue';
+import Modal from '@/components/Modal.vue';
+import PostInfo from '@/components/PostInfo.vue';
 
 import LoginLayout from '@/layouts/AuthLayout.vue';
 import HomeLayout from '@/layouts/HomeLayout.vue';
@@ -398,12 +414,15 @@ export default Vue.extend({
     MessagesLayout,
     SettingCheckbox,
     RadioButton,
+    Modal,
+    PostInfo,
   },
 
   data() {
     return {
       input1: '',
       input2: '',
+      showSlot: false,
     };
   },
 });
