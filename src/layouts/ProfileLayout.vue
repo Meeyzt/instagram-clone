@@ -7,7 +7,7 @@
         <div class="picture">
 
           <user-picture
-            src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
+            :src="profile.pic"
             type="watched-story"
             :size="150"
           />
@@ -16,7 +16,7 @@
 
         <div class="title">
           <div class="user-actions">
-            <div class="username">{{$route.params.id}}</div>
+            <div class="username">{{profile.name}}</div>
 
             <div class="action">
               <Button
@@ -27,7 +27,7 @@
               </Button>
             </div>
 
-            <div class="settings">
+            <router-link to="/accounts/edit" class="settings">
               <icon-base
                 :width="24"
                 :height="24"
@@ -36,24 +36,24 @@
               >
                 <component :is="$route.params.id === '_meeyzt' ? 'settings-icon' : 'details-icon'"/>
               </icon-base>
-            </div>
+            </router-link>
           </div>
 
           <div class="user-details">
             <div class="post-count">
-              <div class="bold">5</div>
+              <div class="bold">{{profile.postsCount}}</div>
 
               <div>gönderi</div>
             </div>
 
             <div class="followers-count">
-              <div class="bold">5</div>
+              <div class="bold">{{profile.followers}}</div>
 
               <div>takipçi</div>
             </div>
 
             <div class="following-count">
-              <div class="bold">5</div>
+              <div class="bold">{{profile.following}}</div>
 
               <div>takip</div>
             </div>
@@ -61,28 +61,25 @@
 
           <div class="biography">
             <div class="name">
-              Mehmet
+              {{profile.name}}
             </div>
 
-            <div class="bio">
-              Bursa <br/>
-              Uludağ Üniversitesi
-            </div>
+            <div class="bio" v-html="profile.biography"/>
           </div>
         </div>
 
       </div>
 
       <div class="stories">
-        <div class="story" v-for="index in 10" :key="index+4242">
+        <div class="story" v-for="story in profile.stories" :key="story.url">
           <user-picture
             type="watched-story"
-            src="https://cf.kizlarsoruyor.com/q8501834/f2c8c0f7-1756-4bdb-8c26-3ed7fc622eef-m.jpg"
+            :src="story.url"
             :size="77"
           />
 
           <div>
-            Çiçeklerim
+            {{story.text}}
           </div>
         </div>
       </div>
@@ -102,12 +99,15 @@
       </div>
 
       <slot/>
+
+      <Footer/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+
 import Headbar from '@/components/Headbar.vue';
 import UserPicture from '@/components/UserPicture.vue';
 import Button from '@/components/Button.vue';
@@ -118,6 +118,7 @@ import GridIcon from '@/components/icons/GridIcon.vue';
 import VideosIcon from '@/components/icons/VideosIcon.vue';
 import CollectionIcon from '@/components/icons/CollectionIcon.vue';
 import TagIcon from '@/components/icons/TagIcon.vue';
+import Footer from '@/components/Footer.vue';
 
 export default Vue.extend({
   components: {
@@ -131,6 +132,7 @@ export default Vue.extend({
     VideosIcon,
     CollectionIcon,
     TagIcon,
+    Footer,
   },
 
   data() {
@@ -165,10 +167,24 @@ export default Vue.extend({
       }],
     };
   },
+
+  props: {
+    profile: {
+      type: Object,
+      required: true,
+    },
+  },
 });
 </script>
 
 <style lang="scss" scoped>
+  a {
+    color: black;
+
+    &:visited {
+      color:black;
+    }
+  }
   .container {
     width: 100%;
     height: 100%;
@@ -266,6 +282,7 @@ export default Vue.extend({
         overflow: auto;
         gap:20px;
         margin-bottom: 44px;
+        justify-content: center;
 
         .story {
           padding: 10px 15px;

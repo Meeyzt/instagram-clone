@@ -5,9 +5,9 @@
   <div class="main">
     <div class="content">
       <div class="stories">
-        <div class="story" v-for="index in 10" :key="index">
-          <user-picture src="https://picsum.photos/450/300" :size="60" type="story-circle" />
-          Ahmet
+        <div class="story" v-for="story in stories" :key="story.username">
+          <user-picture :src="story.url" :size="60" type="story-circle" />
+          {{story.username}}
         </div>
       </div>
       <div class="posts">
@@ -15,13 +15,15 @@
       </div>
     </div>
 
-    <div class="sidebar">
+    <div class="sidebar" v-if="recommendedUsers !== undefined">
       <div class="header">
+
         <user-picture
           type="watched-story"
           src="https://static-cdn.jtvnw.net/jtv_user_pictures/6b3516d5-6103-411e-ab1b-f94a9403d510-profile_image-70x70.png"
           :size="56"
         />
+
         <div class="title">
           <div class="username">_meeyzt</div>
           <div class="name">Mehmet</div>
@@ -46,7 +48,7 @@
         </div>
       </div>
 
-      <div class="suggested-acc" v-for="(user, index) in userInfo" :key="index+99">
+      <div class="suggested-acc" v-for="user in recommendedUsers" :key="user.username">
         <div class="user">
           <user-picture :src="user.pic" :size="32"/>
 
@@ -95,6 +97,17 @@ export default Vue.extend({
     UserPicture,
     Button,
     Headbar,
+  },
+
+  props: {
+    stories: {
+      type: Array,
+      required: true,
+    },
+    recommendedUsers: {
+      type: Array,
+      required: true,
+    },
   },
 
   data() {
@@ -179,7 +192,8 @@ export default Vue.extend({
           width: 100%;
           background: white;
           border: 1px solid rgba(0,0,0, 0.1);
-          overflow: scroll;
+          overflow-x: scroll;
+          overflow-y: hidden;
           margin-bottom: 16px;
           align-items: center;
 

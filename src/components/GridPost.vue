@@ -1,18 +1,18 @@
 <template>
   <div class="gridPost">
     <div class="photo">
-      <img src="https://picsum.photos/900/900" alt="wqd" />
+      <img :src="post.url" alt="wqd" />
       <div class="hover">
         <div class="hover-item-center">
           <icon-base :width="19" :height="19">
             <like-icon :filled="true"/>
           </icon-base>
-          52
+          {{post.likeCount}}
         </div>
 
         <div class="hover-item-center">
           <div class="commenticon"/>
-          69
+          {{post.commentCount}}
         </div>
       </div>
     </div>
@@ -29,6 +29,13 @@ export default Vue.extend({
   components: {
     IconBase,
     LikeIcon,
+  },
+
+  props: {
+    post: {
+      type: Object,
+      required: true,
+    },
   },
 });
 </script>

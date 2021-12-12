@@ -1,11 +1,13 @@
 <template>
   <div class="container">
     <Headbar/>
+
     <div class="grid">
-      <div class="grid-items" v-for="index in 20" :key="index">
-        <grid-post/>
+      <div class="grid-items" v-for="post in explore" :key="post.url">
+        <grid-post :post="post"/>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -13,11 +15,22 @@
 import Vue from 'vue';
 import Headbar from '@/components/Headbar.vue';
 import GridPost from '@/components/GridPost.vue';
+import { IPost } from '@/store/pages/profile/types';
 
 export default Vue.extend({
   components: {
     Headbar,
     GridPost,
+  },
+
+  created() {
+    this.$store.dispatch('getExplore', null, { root: true });
+  },
+
+  computed: {
+    explore(): Array<IPost> {
+      return this.$store.state.explore.explore;
+    },
   },
 });
 </script>

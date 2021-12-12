@@ -32,12 +32,15 @@ export default Vue.extend({
 
   data() {
     return {
-      inputData: '',
+      inputData: this.value,
     };
   },
 
   props: {
     title: {
+      type: String,
+    },
+    value: {
       type: String,
     },
     placeholder: {

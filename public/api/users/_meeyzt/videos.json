@@ -1,0 +1,25 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "url": "https://picsum.photos/600/600",
+      "likeCount": 123,
+      "commentCount": 32
+    },
+    {
+      "url": "https://picsum.photos/600/600",
+      "likeCount": 123,
+      "commentCount": 32
+    },
+    {
+      "url": "https://picsum.photos/600/600",
+      "likeCount": 123,
+      "commentCount": 32
+    },
+    {
+      "url": "https://picsum.photos/600/600",
+      "likeCount": 123,
+      "commentCount": 32
+    }
+  ]
+}

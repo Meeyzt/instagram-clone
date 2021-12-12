@@ -10,8 +10,11 @@
         'text-xs -translate-y-2': isFilled,
       }"
       class="placeholder"
-      v-if="placeholder"
-    >{{ placeholder }}</label>
+      v-if="placeholder && value !== null"
+    >
+      {{ placeholder }}
+    </label>
+
     <input
       :class="{
         'topten': isFilled
@@ -33,7 +36,6 @@ export default Vue.extend({
     value: {
       type: String,
       default: () => null,
-      // validator: prop => typeof prop === 'string' || prop === null,
     },
 
     type: {

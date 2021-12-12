@@ -19,7 +19,7 @@
     </div>
 
     <div class="post-image">
-      <img src="https://picsum.photos/450/300" alt="asd">
+      <img :src="data.pictures[0].src" alt="asd">
     </div>
 
     <div class="post-description">
@@ -64,7 +64,7 @@
       </div>
 
       <div class="post-description-comments">
-        <span>999 yorumun tümünü gör</span>
+        <span>{{data.comments.length}} yorumun tümünü gör</span>
       </div>
     </div>
 
@@ -146,6 +146,13 @@ export default Vue.extend({
       showWidePost: false,
     };
   },
+
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
 });
 </script>
 
@@ -215,6 +222,8 @@ export default Vue.extend({
   .post-image {
     box-sizing: border-box;
     width: 100%;
+    display: flex;
+    overflow: hidden;
 
     img{
       width: 100%;

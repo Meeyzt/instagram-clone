@@ -1,13 +1,13 @@
 <template>
   <settings-layout>
-    <div>
+    <div v-if="profile">
       <div class="profile-edit-section">
         <div class="profile-photo">
           <div class="photo">
-            <user-picture src="https://picsum.photos/150/150" size="38" />
+            <user-picture :src="profile.pic" :size="38" />
           </div>
           <div class="username-area">
-            <div class="text">name</div>
+            <div class="text">{{profile.name}}</div>
             <div class="button">
               <Button backgroundColor="transparent" textColor="blue" > Profil Fotoğrafını Değiştir </Button>
             </div>
@@ -18,6 +18,7 @@
           :placeholder="'Adın'"
           :inputHeight="32"
           :description="'Adın ve soyadın, takma adın veya işletmenin adı gibi tanındığın bir adı kullanarak insanların hesabını keşfetmesine yardımcı ol.\n \nAdını 14 gün içinde sadece iki kez değiştirebilirsin.'"
+          :value="profile.name"
         />
 
         <SettingsEdit
@@ -27,11 +28,13 @@
           :description="'Çoğu durumda, kullanıcı adını 14 gün içinde yeniden değiştirip hsnnakn yapabileceksin.'"
           :linkUrl="'/'"
           :linkText="'Daha Fazla Bilgi Al'"
+          :value="profile.username"
         />
         <SettingsEdit
           :title="'İnternet Sitesi'"
           :placeholder="'İnternet Sitesi'"
           :inputHeight="32"
+          :value="profile.website ? profile.website : ''"
         />
         <SettingsEdit
           :title="'Biyografi'"
@@ -39,21 +42,25 @@
           :inputHeight="32"
           :descriptionTitle="'Kişisel Bilgiler'"
           :description="'Hesap bir işletme, evcil hayvan veya başka bir şey için kullanılıyor olsa da kişiler bilgilerini gir. Bu kısımlar herkese açık profilinde görünmeyecek.'"
+          :value="profile.biography"
         />
         <SettingsEdit
           :title="'E-posta'"
           :placeholder="'E-posta'"
           :inputHeight="32"
+          :value="profile.email"
         />
         <SettingsEdit
           :title="'Telefon Numarası'"
           :placeholder="'Telefon Numarası'"
           :inputHeight="32"
+          :value="profile.phoneNumber"
         />
         <SettingsEdit
           :title="'Cinsiyet'"
           :placeholder="'Cinsiyet'"
           :inputHeight="32"
+          :value="profile.sex"
         />
 
         <div class="suggest">

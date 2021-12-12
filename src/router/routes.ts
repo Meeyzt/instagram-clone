@@ -163,11 +163,6 @@ const routes: Array<RouteConfig> = [
         component: () => import(/* webpackChunkName: "Following" */'../views/User/Following.vue'),
       },
       {
-        path: 'reels',
-        name: 'Reels',
-        component: () => import(/* webpackChunkName: "Reels" */'../views/User/Reels.vue'),
-      },
-      {
         path: 'channel',
         name: 'Channel',
         component: () => import(/* webpackChunkName: "Channel" */'../views/User/Channel.vue'),

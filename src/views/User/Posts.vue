@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <grid-post class="grid-item" v-for="index in 5" :key="index"/>
+    <grid-post class="grid-item" :post="post" v-for="post in posts" :key="post.username"/>
   </div>
 </template>
 
@@ -8,10 +8,21 @@
 import Vue from 'vue';
 
 import GridPost from '@/components/GridPost.vue';
+import { IPost } from '@/store/pages/profile/types';
 
 export default Vue.extend({
   components: {
     GridPost,
+  },
+
+  created() {
+    this.$store.dispatch('getPosts', null, { root: true });
+  },
+
+  computed: {
+    posts(): Array<IPost> {
+      return this.$store.state.profile.posts;
+    },
   },
 });
 </script>
